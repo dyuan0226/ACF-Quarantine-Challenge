@@ -3,12 +3,21 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.7'
 
+
+# These six below are recommended by GitHub; idk what they do but I just added them
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.2.3'
+# gem 'rails', '5.2.3' - this was the original given by ProfH
+gem 'rails'
+gem "actionpack", ">= 5.2.4.3"
+gem "activestorage", ">= 5.2.4.3"
+gem "activesupport", ">= 5.2.4.3"
+gem "actionview", ">= 5.2.4.2"
+# Use Puma as the app server
+# gem 'puma', '3.11' - this was the original given by ProfH
+gem "puma", ">= 3.12.6"
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-# Use Puma as the app server
-gem 'puma', '3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
