@@ -3,6 +3,7 @@ require 'test_helper'
 class TeamTest < ActiveSupport::TestCase
   # PROPOSED CHANGES TO THE SPECS:
   # 1. name should be unique
+  # 2. create an active and inactive scope, and make_active and make_inactive methods
   
   # QUESTIONS: 
   # 1. does archived = false?
@@ -57,14 +58,37 @@ class TeamTest < ActiveSupport::TestCase
 
     should "have a method to determine the total number of points" do 
       assert_equal 5, @top_team_active.total_points
-      assert_equal 1, @bottom_team_active.total_points 
-      assert_equal 2, @inactive_team.total_points
+      assert_equal 2, @bottom_team_active.total_points 
+      assert_equal 3, @inactive_team.total_points
     end
 
     should "have a method to determine the top-x scorers in a team" do 
       assert_equal ["Lu"], @top_team_active.top_x_scorers(1).map{|e| e.last_name}
       assert_equal ["Lu", "Yuan"], @top_team_active.top_x_scorers(2).map{|e| e.last_name}
-      assert_equal ["Fang", "Ma"], @bottom_team_active.top_x_scorers(1).map{|e| e.last_name}
+      assert_equal ["Fang", "Ma"], @bottom_team_active.top_x_scorers(1).map{|e| e.last_name}  # what do we want to do if there's a tie for #1? 
       assert_equal ["Fang", "Ma"], @bottom_team_active.top_x_scorers(2).map{|e| e.last_name}
     end
+
+    should "have a method to make active" do 
+      inactive_team_1 = FactoryBot.create(:team, name: "whatever", description: "lol", active: false)
+      deny inactive_team_1.active 
+      inactive_team_1.make_inactive
+      assert inactive_team_1.active 
+    end
+
+    should "have a method to make inactive" do 
+      active_team_1 = FactoryBot.create(:team, name: "whatever", description: "lol", active: true)
+      assert active_team_1.active 
+      active_team_1.make_inactive
+      deny active_team_1.active 
+    end
+
+    should "have a scope to find active teams" do 
+      assert_equal ["Bottom Team", "Top Team"], Team.active.map{|t| t.name}.sort
+    end
+
+    should "have a scope to find active teams" do 
+      assert_equal ["Inactive Team"], Team.inactive.map{|t| t.name}.sort
+    end
+
 end
