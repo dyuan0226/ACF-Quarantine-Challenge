@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+<<<<<<< HEAD
   # PROPOSED CHANGES TO THE SPECS:
   # 1. Users -> teams should be 0-many beause new users will not have a team yet (allow_blank for team_id should be set to true) and
   # 2. users can be in many teams and could be associated with archived teams that they were in previously
@@ -16,6 +17,7 @@ class UserTest < ActiveSupport::TestCase
   # Relationship Tests
   should have_many(:teams)
   should have_many(:submissions)
+  should have_many(:challenges).through(:submissions)
   # should have_many(:challenges).through(:submissions)  - i'm not sure if this is necessary or makes logical sense, same for photos
 
   # Validation Tests

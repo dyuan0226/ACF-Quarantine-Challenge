@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class TeamTest < ActiveSupport::TestCase
+<<<<<<< HEAD
   # PROPOSED CHANGES TO THE SPECS:
   # 1. name should be unique
   # 2. create an active and inactive scope, and make_active and make_inactive methods

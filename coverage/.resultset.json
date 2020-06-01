@@ -418,6 +418,105 @@
           null
         ]
       },
+      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/submission.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/challenge.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/user.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/team.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
       "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/controllers/application_controller.rb": {
         "lines": [
           0,
@@ -745,52 +844,8 @@
         ],
         "branches": {
         }
-      },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/application_record.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/challenge.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/submission.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/team.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/user.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1591045500
+    "timestamp": 1591046831
   }
 }
