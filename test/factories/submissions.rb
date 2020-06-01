@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :submission do
-    challenge { nil }
-    user { nil }
-    date_completed { "2020-06-01" }
+    association :challenge
+    association :user
+    date_completed { 1.day.ago.to_date }
   end
 end

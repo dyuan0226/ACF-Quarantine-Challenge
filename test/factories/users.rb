@@ -1,12 +1,13 @@
 FactoryBot.define do
   factory :user do
-    first_name { "MyString" }
-    last_name { "MyString" }
-    team { nil }
-    username { "MyString" }
-    password_digest { "MyString" }
-    role { "MyString" }
-    email { "MyString" }
-    active { false }
+    first_name { "Ricky" }
+    last_name { "Ma" }
+    association :team
+    username { "rickyma" }
+    password { "secret" }
+    password_confirmation { "secret" }
+    role { "admin" }
+    email { "rickyma@gmail.com" }
+    active { true }
   end
 end

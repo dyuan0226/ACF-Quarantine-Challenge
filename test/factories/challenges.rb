@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :challenge do
-    name { "MyString" }
-    description { "MyText" }
-    category { "MyString" }
-    num_points { 1 }
+    name { "Read John" }
+    description { "Read the book of John and write a short reflection about what you learned." }
+    category { "Bible" }
+    num_points { 50 }
   end
 end

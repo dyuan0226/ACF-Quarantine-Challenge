@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :team do
-    name { "MyString" }
-    description { "MyText" }
-    active { false }
+    name { "Red Team" }
+    description { "This is the team that like red!" }
+    active { true }
   end
 end
