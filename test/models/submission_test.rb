@@ -29,7 +29,7 @@ class SubmissionTest < ActiveSupport::TestCase
     teardown do
       destroy_submissions
       destroy_challenges
-      destroy_users
+      destroy_user
       destroy_teams
     end
 
@@ -37,6 +37,11 @@ class SubmissionTest < ActiveSupport::TestCase
       @sub_new = FactoryBot.create(:submission, challenge: @write_poetry, user: @matt_bottom_team)
       assert_not_nil @sub_new.date_completed
       assert_equal @sub_new.date_completed, Date.today.to_date
+    end
+
+    should "not be allowed to repeat the same challenge-user pairs" do
+      sub1_dup = FactoryBot.build(:submission, challenge: @read_john, user: @david_top_team)
+      deny sub1_dup.valid?
     end
 
   end
