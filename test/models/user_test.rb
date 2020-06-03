@@ -2,16 +2,11 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   # PROPOSED CHANGES TO THE SPECS:
-  # 1. Users -> teams should be 0-many beause new users will not have a team yet (allow_blank for team_id should be set to true) and
-  # 2. users can be in many teams and could be associated with archived teams that they were in previously
-  # 3. only active users can be in an active team
-  # 4. unsure if password should be required
-  # 5. usernames should be unique
+  # 1. 
 
   # Clarifications:
-  # 1. "only archived by the user that created it" - means that only users can delete their own stuff (ability.rb), and there should be a callback before_destroy that denys the destroy and instead sets to inactive
-  # 2. again, assuming archived = inactive?
-  # 3. "list all challenges completed" = return a list of all challenges completed?
+  # 1. for the "for_challenge" scope do we want it to be a completed submission or just any submission?
+  # 2. for the "for_role" scope role isn't an object so are we just passing in a string?
 
   # Relationship Tests
   should have_many(:teams)
@@ -62,11 +57,13 @@ class UserTest < ActiveSupport::TestCase
 
   context "Given context" do 
     setup do 
+      create_teams
       create_users
     end 
 
     teardown do 
       destroy_users
+      destroy_teams
     end
 
     should "validate the uniqueness of usernames" do 
@@ -99,7 +96,8 @@ class UserTest < ActiveSupport::TestCase
     end
 
     should "have a method that returns a list of all challenges completed" do 
-      # to be implemented with challenges sets
+      assert_equal [@sleep_well, @write_poetry], @david_top_team.challenges_completed
+      assert_equal [@read_john, @sleep_well], @amy_top_team.challenges_completed
     end
 
     should "have a method to make active" do 
@@ -109,12 +107,40 @@ class UserTest < ActiveSupport::TestCase
     end
 
     should "have a method to make inactive" do 
-      assert @kimberly_inactive_team.active 
-      @kimberly_inactive_team.make_inactive
-      deny @kimberly_inactive_team.active 
+      assert @inactive_user_1.active 
+      @inactive_user_1.make_inactive
+      deny @inactive_user_1.active 
     end
 
-    should "have scope tests, but im too lazy to write them right now" do 
+    should "have a scope that returns all the users of a given team" do 
+      assert_equal ["Amy", "David"], User.for_team(@top_team_active).map{|u| u.first_name}.sort
+      assert_equal ["Matthew", "Ricky"], User.for_team(@bottom_team_active).map{|u| u.first_name}.sort
+    end
+
+    should "have a scope that returns all the users who have completed a given challenge" do 
+      assert_equal ["Amy", "David", "Ricky"], User.for_challenge(@read_john).map{|u| u.first_name}.sort
+      assert_equal ["David", "Ricky"], User.for_challenge(@write_poetry).map{|u| u.first_name}.sort
+    end
+
+    should "have a scope that returns all the users who match a given role" do 
+      assert_equal ["Amy", "David"], User.for_role("admin").map{|u| u.first_name}.sort
+      assert_equal ["David", "inactive", "inactive", "Ricky"], User.for_role("regular").map{|u| u.first_name}.sort
+    end
+
+    should "have a scope that sorts all users by last name" do 
+      assert_equal ["Fang", "Lu", "Ma", "One", "Two", "Yuan"], User.by_last_name.map{|u| u.last_name}
+    end
+
+    should "have a scope that sorts all users by last name" do 
+      assert_equal ["Amy", "David", "Inactive", "Inactive", "Matthew", "Ricky"], User.by_first_name.map{|u| u.first_name}
+    end
+
+    should "have a scope that returns all active users" do 
+      assert_equal ["Amy", "David", "Matthew", "Ricky"], User.active.map{|u| u.first_name}.sort
+    end
+
+    should "have a scope that returns all inactive users" do 
+      assert_equal ["Inactive", "Inactive"], User.inactive.map{|u| u.first_name}.sort
     end
 
   end
