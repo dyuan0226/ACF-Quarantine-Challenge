@@ -44,7 +44,7 @@ class ChallengeTest < ActiveSupport::TestCase
       destroy_teams
     end
 
-    should "not be deleted if completed during a shift" do
+    should "not be deleted if it has a submission" do
       @chore_tracker.destroy
       assert @chore_tracker.destroyed?
 
