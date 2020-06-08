@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-06-05T18:16:31-04:00">2020-06-05T18:16:31-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-06-07T21:40:12-04:00">2020-06-07T21:40:12-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  13.99%
+  16.89%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.14
+         0.17
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>286</b> relevant lines,
-    <span class="green"><b>40</b> lines covered</span> and
+    <b>296</b> relevant lines,
+    <span class="green"><b>50</b> lines covered</span> and
     <span class="red"><b>246</b> lines missed. </span>
     (<span class="red">
-  13.99%
+  16.89%
 </span>
 )
   </div>
@@ -227,9 +227,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#78c43d6e55a788a3c62bc38c752c87f9d765f1be" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">31</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">34</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">18</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -450,15 +450,15 @@
   <h2>
     <span class="group_name">Models</span>
     (<span class="covered_percent">
-      <span class="yellow">
-  89.74%
+      <span class="green">
+  91.84%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.9
+         0.92
        </span>
     </span> hits/line
     )
@@ -471,11 +471,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>39</b> relevant lines,
-    <span class="green"><b>35</b> lines covered</span> and
+    <b>49</b> relevant lines,
+    <span class="green"><b>45</b> lines covered</span> and
     <span class="red"><b>4</b> lines missed. </span>
-    (<span class="yellow">
-  89.74%
+    (<span class="green">
+  91.84%
 </span>
 )
   </div>
@@ -545,9 +545,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#78c43d6e55a788a3c62bc38c752c87f9d765f1be" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">31</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">34</td>
+            <td class="cell--number">18</td>
+            <td class="cell--number">18</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -5583,8 +5583,8 @@
     
 
     <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>18</b> relevant lines.
+      <span class="green"><b>18</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -5728,112 +5728,112 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i</code>
+            
+
+            <code class="ruby">  validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # validates_uniqueness_of :username, case_sensitive: false</code>
+            
+
+            <code class="ruby">  validates_format_of :first_name, with: /\A([A-Z])[a-z]+\z/, message: &quot;First name should be capitalized!&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # validates_presence_of :password, :on =&gt; :create </code>
+            
+
+            <code class="ruby">  validates_format_of :last_name, with: /\A([A-Z])[a-z]+\z/, message: &quot;Last name should be capitalized!&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # validates_presence_of :password_confirmation, :on =&gt; :create </code>
+            
+
+            <code class="ruby">  validates_uniqueness_of :username, case_sensitive: false</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # validates_confirmation_of :password, message: &quot;does not match&quot;</code>
+            
+
+            <code class="ruby">  validates_uniqueness_of :email, case_sensitive: false</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="18">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # validates_length_of :password, :minimum =&gt; 4, message: &quot;must be at least 4 characters long&quot;, :allow_blank =&gt; true</code>
+            
+
+            <code class="ruby">  validates_presence_of :password, :on =&gt; :create </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="19">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # validates_inclusion_of :role, in: %w[admin regular], message: &quot;is not recognized in the system&quot;</code>
+            
+
+            <code class="ruby">  validates_presence_of :password_confirmation, :on =&gt; :create </code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="20">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  validates_confirmation_of :password, message: &quot;does not match&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  # Scopes</code>
+            
+
+            <code class="ruby">  validates_length_of :password, :minimum =&gt; 4, message: &quot;must be at least 4 characters long&quot;, :allow_blank =&gt; true</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  validates_inclusion_of :role, in: %w[admin regular], message: &quot;is not recognized in the system&quot;</code>
           </li>
         </div>
       
@@ -5855,7 +5855,7 @@
 
             
 
-            <code class="ruby">  # Callbacks</code>
+            <code class="ruby">  # Scopes</code>
           </li>
         </div>
       
@@ -5888,7 +5888,7 @@
 
             
 
-            <code class="ruby">  # Methods</code>
+            <code class="ruby">  # Callbacks</code>
           </li>
         </div>
       
@@ -5899,7 +5899,7 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -5915,7 +5915,40 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="30">
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">  # Methods</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">  </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="32">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="33">
             <span class="hits">1</span>
             
 
@@ -5926,7 +5959,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="31">
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
