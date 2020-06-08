@@ -14,7 +14,6 @@ module Contexts
       @amy_top_team.destroy
       @ricky_bottom_team.destroy
       @matt_bottom_team.destroy
-      @kimberly_inactive_team.destroy
       @inactive_user_1.destroy
       @inactive_user_2.destroy
     end

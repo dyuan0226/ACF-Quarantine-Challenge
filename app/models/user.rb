@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  # for some reason, this doesnt work so i did a jank workaround
+  # include AppHelpers::Deletions
 
   has_secure_password
 
@@ -22,15 +24,65 @@ class User < ApplicationRecord
   validates_inclusion_of :role, in: %w[admin regular], message: "is not recognized in the system"
 
   # Scopes
+  scope :for_team,        -> (team){ where('team_id == ?', team.id) }
+  scope :for_challenge,   -> (challenge){ joins(:submissions).where('submissions.challenge_id = ? AND submissions.date_completed NOT NULL', challenge.id) }
+  scope :for_role,        -> (role){ where('role = ?', role) }
+  scope :by_last_name,    -> { order('last_name ASC') }
+  scope :by_first_name,   -> { order('first_name ASC') }
+  scope :active,          -> { where(active: true) }
+  scope :inactive,        -> { where.not(active: true) }
+
 
 
   # Callbacks
+  before_create do 
+    if self.role.nil?
+      self.role = "regular"
+    end
+  end
 
+  before_destroy -> { handle_deletion_request() }
 
   # Methods
   def self.authenticate(username, password)
     find_by_username(username).try(:authenticate, password)
   end
 
+  def points
+    completed_challenges = self.submissions.select{|s| s.date_completed != nil}
+    completed_challenges.size
+  end
+
+  def challenges_completed 
+    self.submissions.select{|s| s.date_completed != nil}.map{|s| s.challenge}
+  end
+
+  def make_active
+    self.active = true
+    self.save!
+  end
+
+  def make_inactive
+    self.active = false 
+    self.save!
+  end
+
   private
+  attr_accessor :destroyable
+
+  # Multiple models do not allow for deletions, so we can 
+  # create a simple method here for callbacks to use as needed
+  def cannot_destroy_object
+    self.destroyable = false
+    msg = "This #{self.class.to_s.downcase} cannot be deleted at this time. If this is a mistake, please alert the administrator."
+    errors.add(:base, msg)
+    throw(:abort) if errors.present?
+  end
+
+  # only the user themself can delete themselves - this would be handled with ability.rb
+  def handle_deletion_request
+    self.make_inactive
+    cannot_destroy_object()
+  end
+  
 end

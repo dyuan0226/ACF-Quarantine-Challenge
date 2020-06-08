@@ -388,44 +388,42 @@
   },
   "Unit Tests": {
     "coverage": {
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/helpers/application_helper.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/helpers/challenges_helper.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/helpers/challenges_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/helpers/submissions_helper.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/helpers/submissions_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/helpers/teams_helper.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/helpers/teams_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/helpers/users_helper.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/helpers/users_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/team.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/models/user.rb": {
         "lines": [
           1,
           null,
           null,
           null,
-          null,
-          1,
           1,
           null,
           null,
@@ -435,12 +433,51 @@
           1,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          3,
+          3,
+          3,
+          2,
+          2,
           2,
           2,
           null,
           null,
           null,
           null,
+          1,
+          107,
+          2,
+          null,
+          null,
+          null,
+          104,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          12,
+          4,
+          null,
+          null,
+          1,
+          11,
+          null,
           null,
           1,
           1,
@@ -448,43 +485,89 @@
           null,
           null,
           1,
+          104,
+          104,
+          null,
+          null,
           1,
           1,
+          null,
+          null,
+          null,
+          1,
+          103,
+          103,
+          103,
+          103,
+          null,
+          null,
+          null,
+          1,
+          103,
+          103,
+          null,
+          null,
+          null
+        ]
+      },
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/models/team.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
           null,
           null,
           1,
           null
         ]
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/user.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/models/challenge.rb": {
         "lines": [
           1,
           null,
           1,
-          null,
-          null,
-          1,
-          1,
-          1,
           1,
           null,
           null,
           1,
           1,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          null,
+          null,
           1,
           1,
           null,
@@ -492,18 +575,13 @@
           null,
           null,
           null,
-          null,
-          null,
-          null,
-          1,
-          0,
           null,
           null,
           1,
           null
         ]
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/submission.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/models/submission.rb": {
         "lines": [
           1,
           null,
@@ -526,7 +604,7 @@
           null
         ]
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/controllers/application_controller.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0
@@ -534,87 +612,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/controllers/challenges_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/controllers/submissions_controller.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/controllers/challenges_controller.rb": {
         "lines": [
           0,
           0,
@@ -694,7 +692,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/controllers/teams_controller.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/controllers/submissions_controller.rb": {
         "lines": [
           0,
           0,
@@ -774,7 +772,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/controllers/users_controller.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/controllers/teams_controller.rb": {
         "lines": [
           0,
           0,
@@ -854,9 +852,18 @@
         "branches": {
         }
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/app/models/challenge.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/app/controllers/users_controller.rb": {
         "lines": [
           0,
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
           null,
           0,
           0,
@@ -872,17 +879,60 @@
           null,
           null,
           null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           null,
           null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
           0,
           0
         ],
         "branches": {
         }
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/lib/app_helpers.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/lib/app_helpers.rb": {
         "lines": [
           null,
           0,
@@ -898,7 +948,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/lib/helpers/activeable.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/lib/helpers/activeable.rb": {
         "lines": [
           0,
           0,
@@ -929,7 +979,7 @@
         "branches": {
         }
       },
-      "/mnt/c/Users/david/OneDrive/Documents/Misc/ACFQuarantineChallenge/lib/helpers/deletions.rb": {
+      "/mnt/c/users/memor/onedrive/documents/github/ACF-Quarantine-Challenge/lib/helpers/deletions.rb": {
         "lines": [
           0,
           0,
@@ -951,6 +1001,6 @@
         }
       }
     },
-    "timestamp": 1591581199
+    "timestamp": 1591653410
   }
 }

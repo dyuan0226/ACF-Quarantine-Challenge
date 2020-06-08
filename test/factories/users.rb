@@ -6,7 +6,7 @@ FactoryBot.define do
     username { "rickyma" }
     password { "secret" }
     password_confirmation { "secret" }
-    role { "admin" }
+    role { "regular" }
     email { "rickyma@gmail.com" }
     active { true }
   end
