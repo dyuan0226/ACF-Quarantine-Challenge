@@ -93,8 +93,8 @@ class UserTest < ActiveSupport::TestCase
     end
 
     should "have class method to handle authentication services" do
-      assert User.authenticate('ed', 'secret')
-      deny User.authenticate('ed', 'notsecret')
+      assert User.authenticate('dyuan', 'secret')
+      deny User.authenticate('dyuan', 'notsecret')
     end
 
     # unsure if this test is sufficient, might cause problems later on
