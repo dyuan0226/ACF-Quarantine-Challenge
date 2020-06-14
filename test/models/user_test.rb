@@ -159,6 +159,10 @@ class UserTest < ActiveSupport::TestCase
       assert_equal ["Amy", "David", "Inactive", "Inactive", "Matthew", "Ricky"], User.by_first_name.map{|u| u.first_name}
     end
 
+    should "have a scope that sorts users by points accrued" do
+      assert_equal ["Matthew", "David", "Amy", "Ricky"], User.active.by_points.map { |u| u.first_name }
+    end
+
     should "have a scope that returns all active users" do 
       assert_equal ["Amy", "David", "Matthew", "Ricky"], User.active.map{|u| u.first_name}.sort
     end

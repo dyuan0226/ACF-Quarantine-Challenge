@@ -32,7 +32,9 @@ class User < ApplicationRecord
   scope :active,          -> { where(active: true) }
   scope :inactive,        -> { where.not(active: true) }
 
-
+  def self.by_points
+    User.all.sort_by { |u| u.points }
+  end
 
   # Callbacks
   before_create do 
