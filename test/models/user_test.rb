@@ -21,6 +21,7 @@ class UserTest < ActiveSupport::TestCase
   should validate_presence_of(:password)
   should validate_presence_of(:password_confirmation)
   should validate_presence_of(:email)
+  should validate_presence_of(:team_id)
   should validate_uniqueness_of(:username).case_insensitive()
   should validate_uniqueness_of(:email).case_insensitive()
   should have_secure_password
@@ -103,22 +104,24 @@ class UserTest < ActiveSupport::TestCase
       assert_equal "regular", unfilled_role.role 
     end
 
-    should "not be able to destroy a user, only set to inactive" do   # i'm not too sure if this would work due to saving and reloading to the database or whatnot
-      @imposter = FactoryBot.create(:user, first_name: "Imposter", last_name: "Ma", team: @top_team_active, username: "rma1", email: "rma1@gmail.com", active: true)
-      assert @imposter.active 
-      deny @imposter.destroy 
-      deny @imposter.active
-    end
+    # should "not be able to destroy a user, only set to inactive" do
+    #   assert @amy_top_team.active 
+    #   @amy_top_team.destroy 
+    #   @amy_top_team.reload
+    #   deny @amy_top_team.destroyed?
+    #   puts @amy_top_team
+    #   deny @amy_top_team.active
+    # end
 
     should "have a method to calculate the number of points of a user" do 
-      assert_equal 2, @amy_top_team.points
-      assert_equal 2, @david_top_team.points
+      assert_equal 80, @amy_top_team.points
+      assert_equal 110, @david_top_team.points
       assert_equal 0, @matt_bottom_team.points 
-      assert_equal 2, @ricky_bottom_team.points 
+      assert_equal 280, @ricky_bottom_team.points 
     end
 
     should "have a method that returns a list of all challenges completed" do 
-      assert_equal [@sleep_well, @write_poetry], @david_top_team.challenges_completed
+      assert_equal [@read_john, @sleep_well, @write_poetry], @david_top_team.challenges_completed
       assert_equal [@read_john, @sleep_well], @amy_top_team.challenges_completed
     end
 
@@ -142,7 +145,7 @@ class UserTest < ActiveSupport::TestCase
     end
 
     should "have a scope that returns all the users who have completed a given challenge" do 
-      assert_equal ["Amy", "Ricky"], User.for_challenge(@read_john).map{|u| u.first_name}.sort
+      assert_equal ["Amy", "David", "Ricky"], User.for_challenge(@read_john).map{|u| u.first_name}.sort
       assert_equal ["David", "Ricky"], User.for_challenge(@write_poetry).map{|u| u.first_name}.sort
     end
 
@@ -160,7 +163,7 @@ class UserTest < ActiveSupport::TestCase
     end
 
     should "have a scope that sorts users by points accrued" do
-      assert_equal ["Matthew", "David", "Amy", "Ricky"], User.active.by_points.map { |u| u.first_name }
+      assert_equal ["Ricky", "David", "Amy", "Matthew"], User.active.by_points.map { |u| u.first_name }
     end
 
     should "have a scope that returns all active users" do 

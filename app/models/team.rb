@@ -17,7 +17,9 @@ class Team < ApplicationRecord
   scope :inactive,        -> { where.not(active: true) }
 
   # Callbacks
-
+  before_destroy do 
+    handle_deletion_request()
+  end
 
   # Methods
   def make_active
@@ -30,5 +32,36 @@ class Team < ApplicationRecord
     self.save!
   end
 
+  def total_points
+    self.users.map { |u| u.points }.sum
+  end
+
+  def top_x_scorers(x)
+    if x > self.users.size
+      self.users.by_points
+    else
+      self.users.by_points.take(x)
+    end
+  end
+
   private
+  attr_accessor :destroyable
+
+  # Multiple models do not allow for deletions, so we can 
+  # create a simple method here for callbacks to use as needed
+  def cannot_destroy_object
+    self.destroyable = false
+    msg = "This #{self.class.to_s.downcase} cannot be deleted at this time. If this is a mistake, please alert the administrator."
+    errors.add(:base, msg)
+    throw(:abort) if errors.present?
+    puts "got here to this point"
+  end
+
+  # only the user themself can delete themselves - this would be handled with ability.rb
+  def handle_deletion_request
+    self.make_inactive
+    unless self.users.empty?
+      cannot_destroy_object()
+    end
+  end
 end

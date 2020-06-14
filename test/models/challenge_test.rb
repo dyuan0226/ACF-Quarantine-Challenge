@@ -31,53 +31,55 @@ class ChallengeTest < ActiveSupport::TestCase
 
   context "Given context" do
     setup do
-      # create_teams
-      # create_users
+      create_teams
+      create_users
       create_challenges
-      # create_submissions
+      create_submissions
     end
 
     teardown do
-      # destroy_submissions
+      destroy_submissions
       destroy_challenges
-      # destroy_users
-      # destroy_teams
+      destroy_users
+      destroy_teams
     end
 
-    # should "not be deleted if it has a submission" do
-    #   @chore_tracker.destroy
-    #   assert @chore_tracker.destroyed?
+    should "not be deleted if it has a submission" do
+      @chore_tracker.destroy
+      assert @chore_tracker.destroyed?
 
-    #   @read_john.destroy
-    #   deny @read_john.destroyed?
-    #   @write_poetry.destroy
-    #   deny @write_poetry.destroyed?
-    # end
+      @read_john.destroy
+      @read_john.reload
+      deny @read_john.destroyed?
+      @write_poetry.destroy
+      @write_poetry.reload
+      deny @write_poetry.destroyed?
+    end
 
     should "list challenges alphabetically" do
       assert_equal [@chore_tracker, @memorize_2_tim, @read_john, @sleep_well, @write_poetry], Challenge.alphabetical
     end
 
-    # should "have a scope 'for_user_completed' that works" do
-    #   assert_equal 3, Challenge.for_user_completed(@david_top_team).size
-    #   assert_equal [@read_john, @sleep_well, @write_poetry], Challenge.for_user_completed(@david_top_team).alphabetical
+    should "have a scope 'for_user_completed' that works" do
+      assert_equal 3, Challenge.for_user_completed(@david_top_team).size
+      assert_equal [@read_john, @sleep_well, @write_poetry], Challenge.for_user_completed(@david_top_team)
 
-    #   assert_equal 2, Challenge.for_user_completed(@amy_top_team).size
-    #   assert_equal [@read_john, @sleep_well], Challenge.for_user_completed(@amy_top_team).alphabetical
+      assert_equal 2, Challenge.for_user_completed(@amy_top_team).size
+      assert_equal [@read_john, @sleep_well], Challenge.for_user_completed(@amy_top_team)
 
-    #   assert_equal 0, Challenge.for_user_completed(@matt_bottom_team).size
-    # end
+      assert_equal 0, Challenge.for_user_completed(@matt_bottom_team).size
+    end
 
-    # should "have a scope 'for_user_incomplete' that works" do
-    #   assert_equal 2, Challenge.for_user_incomplete(@david_top_team).size
-    #   assert_equal [@chore_tracker, @memorize_2_tim], Challenge.for_user_incomplete(@david_top_team).alphabetical
+    should "have a scope 'for_user_incomplete' that works" do
+      assert_equal 2, Challenge.for_user_incomplete(@david_top_team).size
+      assert_equal [@memorize_2_tim, @chore_tracker], Challenge.for_user_incomplete(@david_top_team)
 
-    #   assert_equal 3, Challenge.for_user_incomplete(@amy_top_team).size
-    #   assert_equal [@chore_tracker, @memorize_2_tim, @write_poetry], Challenge.for_user_incomplete(@amy_top_team).alphabetical
+      assert_equal 3, Challenge.for_user_incomplete(@amy_top_team).size
+      assert_equal [@memorize_2_tim, @chore_tracker, @write_poetry], Challenge.for_user_incomplete(@amy_top_team)
 
-    #   assert_equal 5, Challenge.for_user_incomplete(@matt_bottom_team).size
-    #   assert_equal Challenge.alphabetical, Challenge.for_user_incomplete(@matt_bottom_team).alphabetical
-    # end
+      assert_equal 5, Challenge.for_user_incomplete(@matt_bottom_team).size
+      assert_equal Challenge.all, Challenge.for_user_incomplete(@matt_bottom_team)
+    end
 
     should "have a scope 'for_category' that works" do
       assert_equal 2, Challenge.for_category("Bible").size

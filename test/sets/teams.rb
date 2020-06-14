@@ -7,9 +7,9 @@ module Contexts
     end
     
     def destroy_teams
-      @top_team_active.destroy 
-      @bottom_team_active.destroy 
-      @inactive_team.destroy 
+      @top_team_active.delete
+      @bottom_team_active.delete
+      @inactive_team.delete
     end
   end
 end

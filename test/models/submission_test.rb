@@ -16,7 +16,6 @@ class SubmissionTest < ActiveSupport::TestCase
   should allow_value(Date.today.to_date).for(:date_completed)
   should_not allow_value(1.week.from_now.to_date).for(:date_completed)
   should_not allow_value("bad").for(:date_completed)
-  should_not allow_value(nil).for(:date_completed)
 
   context "Given context" do
     setup do
@@ -29,7 +28,7 @@ class SubmissionTest < ActiveSupport::TestCase
     teardown do
       destroy_submissions
       destroy_challenges
-      destroy_user
+      destroy_users
       destroy_teams
     end
 

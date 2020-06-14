@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :photos, through: :submissions
 
   # Validations
-  validates_presence_of :first_name, :last_name, :username, :email
+  validates_presence_of :first_name, :last_name, :username, :team_id, :email
   validates_format_of :email, with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates_format_of :first_name, with: /\A([A-Z])[a-z]+\z/, message: "First name should be capitalized!"
   validates_format_of :last_name, with: /\A([A-Z])[a-z]+\z/, message: "Last name should be capitalized!"
@@ -33,7 +33,7 @@ class User < ApplicationRecord
   scope :inactive,        -> { where.not(active: true) }
 
   def self.by_points
-    User.all.sort_by { |u| u.points }
+    User.all.sort_by { |u| u.points }.reverse
   end
 
   # Callbacks
@@ -51,12 +51,11 @@ class User < ApplicationRecord
   end
 
   def points
-    completed_challenges = self.submissions.select{|s| s.date_completed != nil}
-    completed_challenges.size
+    self.submissions.map { |s| s.challenge.num_points }.sum
   end
 
   def challenges_completed 
-    self.submissions.select{|s| s.date_completed != nil}.map{|s| s.challenge}
+    self.submissions.map{|s| s.challenge}
   end
 
   def make_active
