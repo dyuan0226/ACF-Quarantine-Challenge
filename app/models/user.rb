@@ -68,6 +68,11 @@ class User < ApplicationRecord
     self.save!
   end
 
+  def role?(authorized_role)
+    return false if role.nil?
+    role.downcase.to_sym == authorized_role
+  end
+
   private
   attr_accessor :destroyable
 

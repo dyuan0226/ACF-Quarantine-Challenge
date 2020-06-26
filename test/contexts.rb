@@ -3,6 +3,7 @@ require './test/sets/teams'
 require './test/sets/users'
 require './test/sets/challenges'
 require './test/sets/submissions'
+require './test/sets/abilities'
 # require './test/sets/photos'
 
 module Contexts
@@ -11,6 +12,7 @@ module Contexts
   include Contexts::Users
   include Contexts::Challenges
   include Contexts::Submissions
+  include Contexts::Abilities
   # include Contexts::Photos
   
   def create_all
