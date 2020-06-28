@@ -4,12 +4,13 @@ class TeamsController < ApplicationController
   # GET /teams
   # GET /teams.json
   def index
-    @teams = Team.all
+    @teams = Team.all.sort_by {|t| t.total_points}
   end
 
   # GET /teams/1
   # GET /teams/1.json
   def show
+    @team_roster = User.for_team(@team).by_first_name
   end
 
   # GET /teams/new
@@ -54,10 +55,12 @@ class TeamsController < ApplicationController
   # DELETE /teams/1
   # DELETE /teams/1.json
   def destroy
-    @team.destroy
-    respond_to do |format|
-      format.html { redirect_to teams_url, notice: 'Team was successfully destroyed.' }
-      format.json { head :no_content }
+    if @team.destroy
+      flash[:notice] = "Successfully removed #{@team.name}."
+      redirect_to teams_url
+    else
+      @team_roster = User.for_team(@team.id).by_first_name
+      render action: 'show'
     end
   end
 

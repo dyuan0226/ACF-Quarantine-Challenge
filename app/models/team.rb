@@ -53,6 +53,7 @@ class Team < ApplicationRecord
     self.destroyable = false
     msg = "This #{self.class.to_s.downcase} cannot be deleted at this time. If this is a mistake, please alert the administrator."
     errors.add(:base, msg)
+    puts "got here"
     throw(:abort) if errors.present?
     puts "got here to this point"
   end

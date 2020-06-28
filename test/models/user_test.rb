@@ -104,14 +104,14 @@ class UserTest < ActiveSupport::TestCase
       assert_equal "regular", unfilled_role.role 
     end
 
-    # should "not be able to destroy a user, only set to inactive" do
-    #   assert @amy_top_team.active 
-    #   @amy_top_team.destroy 
-    #   @amy_top_team.reload
-    #   deny @amy_top_team.destroyed?
-    #   puts @amy_top_team
-    #   deny @amy_top_team.active
-    # end
+    should "not be able to destroy a user, only set to inactive" do
+      assert @amy_top_team.active 
+      @amy_top_team.destroy 
+      @amy_top_team.reload
+      deny @amy_top_team.destroyed?
+      puts @amy_top_team
+      deny @amy_top_team.active
+    end
 
     should "have a method to calculate the number of points of a user" do 
       assert_equal 80, @amy_top_team.points

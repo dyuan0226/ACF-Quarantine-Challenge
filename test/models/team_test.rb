@@ -48,15 +48,15 @@ class TeamTest < ActiveSupport::TestCase
       destroy_teams
     end
 
-    # should "not be deleted if users are associated with it, only set to inactive" do 
-    #   assert @top_team_active.active
-    #   deny @top_team_active.users.empty?
-    #   deny @top_team_active.destroyed?
-    #   @top_team_active.destroy
-    #   @top_team_active.reload
-    #   deny @top_team.destroyed?
-    #   deny @top_team_active.active
-    # end
+    should "not be deleted if users are associated with it, only set to inactive" do 
+      assert @top_team_active.active
+      deny @top_team_active.users.empty?
+      deny @top_team_active.destroyed?
+      @top_team_active.destroy
+      @top_team_active.reload
+      deny @top_team_active.destroyed?
+      deny @top_team_active.active
+    end
 
     should "allow teams with no users associated with them to be destroyed" do
       @new_team = FactoryBot.create(:team, name: "New team", description: "we are a new team", active: true)
