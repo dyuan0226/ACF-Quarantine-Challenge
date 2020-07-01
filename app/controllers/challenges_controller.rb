@@ -1,15 +1,17 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: [:show, :edit, :update, :destroy]
+  before_action :set_challenge, only: [:show, :edit, :update]
 
   # GET /challenges
   # GET /challenges.json
   def index
-    @challenges = Challenge.all
+    @challenges = Challenge.all.alphabetical.paginate(page: params[:active_page]).per_page(10)
+
   end
 
   # GET /challenges/1
   # GET /challenges/1.json
   def show
+    @users_completed = @challenge.submissions.map { |s| s.user }
   end
 
   # GET /challenges/new
@@ -48,16 +50,6 @@ class ChallengesController < ApplicationController
         format.html { render :edit }
         format.json { render json: @challenge.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /challenges/1
-  # DELETE /challenges/1.json
-  def destroy
-    @challenge.destroy
-    respond_to do |format|
-      format.html { redirect_to challenges_url, notice: 'Challenge was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
