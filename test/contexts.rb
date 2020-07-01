@@ -5,6 +5,7 @@ require './test/sets/challenges'
 require './test/sets/submissions'
 require './test/sets/abilities'
 # require './test/sets/photos'
+require './test/sets/abilities'
 
 module Contexts
   # explicitly include all sets of contexts used for testing 
@@ -14,6 +15,7 @@ module Contexts
   include Contexts::Submissions
   include Contexts::Abilities
   # include Contexts::Photos
+  include Contexts::Abilities
   
   def create_all
     puts "Building context..."
