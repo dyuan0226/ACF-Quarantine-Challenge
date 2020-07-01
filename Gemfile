@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.7'
 
 
-# These seven below are recommended by GitHub; idk what they do but I just added them
+# These gems below are recommended by GitHub; idk what they do but I just added them
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'rails', '5.2.3' - this was the original given by ProfH
 gem 'rails'
@@ -13,6 +13,7 @@ gem "activestorage", ">= 5.2.4.3"
 gem "activesupport", ">= 5.2.4.3"
 gem "actionview", ">= 5.2.4.2"
 gem "websocket-extensions", ">= 0.1.5"
+gem "rack", ">= 2.2.3"
 # Use Puma as the app server
 # gem 'puma', '3.11' - this was the original given by ProfH
 gem "puma", ">= 3.12.6"
