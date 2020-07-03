@@ -13,7 +13,7 @@ gem "activestorage", ">= 5.2.4.3"
 gem "activesupport", ">= 5.2.4.3"
 gem "actionview", ">= 5.2.4.2"
 gem "websocket-extensions", ">= 0.1.5"
-gem "rack", ">= 2.2.3"
+# gem "rack", ">= 2.2.3"
 # Use Puma as the app server
 # gem 'puma', '3.11' - this was the original given by ProfH
 gem "puma", ">= 3.12.6"
