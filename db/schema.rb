@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_01_203951) do
+ActiveRecord::Schema.define(version: 2020_07_05_155337) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 2020_06_01_203951) do
     t.date "date_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "media_url"
+    t.text "caption"
+    t.string "media_type"
     t.index ["challenge_id"], name: "index_submissions_on_challenge_id"
     t.index ["user_id"], name: "index_submissions_on_user_id"
   end
