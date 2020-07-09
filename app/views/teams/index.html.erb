@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+<% if @teams.empty? %>
+  <h4>There are no teams in the system at this time.</h4>
+<% else %>
 
 <h1>Teams</h1>
 
@@ -29,3 +31,5 @@
 <br>
 
 <%= link_to 'New Team', new_team_path %>
+
+<%end%>
