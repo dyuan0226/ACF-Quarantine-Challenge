@@ -1,0 +1,76 @@
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+   font-family: 'Open Sans',serif !important;
+}
+
+.navbar{
+    height: 5.5em;
+    background: #779ECA;
+}
+
+.navbar #title{
+    font-size: 2em;
+}
+
+.nav-item{
+    margin: 10px;
+}
+
+#title{
+    color:white;
+}
+
+#navlinks a{
+    color:white;
+}
+
+#footer{
+    background-color: #CCDAEB;
+}
+
+#footer span{
+    color:#77B6FF;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .navbar-brand {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .navbar #title{
+        font-size: 1.5em;
+    }
+
+    ul.navbar-nav{
+        flex-direction: row;
+    }
+
+    #navlinks{
+        display:none;
+    }
+
+    #footer{
+        width:100vw;
+    }
+
+    #footer .nav-item{
+        font-size: 80%;
+    }
+  
+  }
+
+  @media only screen and (min-width: 1200px) {
+    
+    #footer{
+        display:none;
+    }
+
+    
+  }
+
