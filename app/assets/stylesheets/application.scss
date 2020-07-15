@@ -17,7 +17,9 @@
 
 .inline-card {
    width: 100%;
-   border: 1px grey;
+   border: 2px black;
+   background-color: rgba(167, 165, 165, 0.48);
+   border-radius: 8px;
 //    height: 150px;
 //    line-height: 150px;
 //    overflow: auto;
@@ -31,6 +33,7 @@
 }
 
 .card-body-inline {
+  padding: 10px;
   display: inline-block;
   vertical-align: middle;
 }
