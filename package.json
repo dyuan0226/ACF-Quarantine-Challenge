@@ -1,5 +1,15 @@
 {
   "name": "ACFQuarantineChallenge",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "4.2.2",
+    "bootstrap": "4.3.1",
+    "bootstrap-icons": "^1.0.0-alpha5",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "turbolinks": "^5.2.0"
+  }
 }
