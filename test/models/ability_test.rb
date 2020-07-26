@@ -49,8 +49,4 @@ class AbilityTest < ActiveSupport::TestCase
     end
 
   end
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> 7134f2a33a504e014c2751ded7fc17e4dd8ed54b
