@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand fixed-top">
-  <a class="navbar-brand" id='title' href="#">ACF Quarantine Challenge</a>
-  
+  <a class="navbar-brand" id='title' href="home#index">ACF Quarantine Challenge</a>
 
-  
+
+
   <ul class="navbar-nav ml-auto" id='navlinks'>
 		<li class="nav-item">
 			<li><%= link_to 'Leaderboard', teams_path %></li>
@@ -16,9 +16,9 @@
 	  <li class="nav-item">
 			<li><%= link_to 'Gallery', teams_path %></li>
 		</li>
-    
+
 	</ul>
-  
+
 
 
   <nav class="navbar fixed-bottom navbar-light justify-content-center " id='footer'>
@@ -33,13 +33,13 @@
 							<path d="M10 11c0 .552-.895 1-2 1s-2-.448-2-1 .895-1 2-1 2 .448 2 1z"/>
 						</svg>
 						<% end %>
-						
+
 						<span class="nav-link" href="#"><%= link_to 'Leaderboard', teams_path %></span>
 
 				</li>
-				
+
 				<li class="nav-item d-flex flex-column">
-					
+
 							<%= link_to teams_path do %>
 								<svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-flag-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 												  <path fill-rule="evenodd" d="M3.5 1a.5.5 0 0 1 .5.5v13a.5.5 0 0 1-1 0v-13a.5.5 0 0 1 .5-.5z"/>
@@ -47,7 +47,7 @@
 								</svg>
 							  <% end %>
 							  <span class="nav-link" href="#"><%= link_to 'Challenges', challenges_path %></span>
-			
+
 				</li>
 
 				<li class="nav-item d-flex flex-column">
@@ -74,8 +74,8 @@
 					<% end %>
 					<span class="nav-link" href="#"><%= link_to 'Gallery', teams_path %></span>
 
-				</li>		
-			
+				</li>
+
 
 			</ul>
 	</nav>
