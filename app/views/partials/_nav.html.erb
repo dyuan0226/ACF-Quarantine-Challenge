@@ -14,7 +14,11 @@
 	  		<li><%= link_to 'Team', teams_path %></li></li>
 	  	<li class="nav-item">
 		  <li><%= link_to 'Gallery', teams_path %></li></li>
-    
+      <% if logged_in? %>
+        <li class="nav-item"><%= link_to 'Logout', logout_path %></li>
+      <% else %>
+        <li class="nav-item"><%= link_to 'Login', login_path %></li>
+      <% end %>
 		</ul>
 	
   
