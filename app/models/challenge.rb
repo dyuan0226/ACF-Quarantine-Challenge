@@ -6,7 +6,7 @@ class Challenge < ApplicationRecord
   # Validations
   validates_presence_of :name, :num_points, :category
   validates_numericality_of :num_points, greater_than: 0, only_integer: true
-  validates_inclusion_of :category, in:  %w[Bible Lifestyle Creative]
+  validates_inclusion_of :category, in:  %w[Spiritual Physical Social Miscellaneous]
 
   # Scopes
   scope :alphabetical,        -> { order('name') }

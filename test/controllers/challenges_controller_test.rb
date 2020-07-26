@@ -9,6 +9,10 @@ class ChallengesControllerTest < ActionDispatch::IntegrationTest
     get challenges_path
     assert_response :success
     assert_not_nil assigns(:challenges)
+    assert_not_nil assigns(:spiritual_challenges)
+    assert_not_nil assigns(:physical_challenges)
+    assert_not_nil assigns(:social_challenges)
+    assert_not_nil assigns(:misc_challenges)
   end
 
   test "should show challenge" do
