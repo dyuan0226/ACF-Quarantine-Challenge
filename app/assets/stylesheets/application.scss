@@ -109,6 +109,12 @@
 //    height: 150px;
 //    line-height: 150px;
 //    overflow: auto;
+    &.home{
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+        text-align: center;
+    }
 }
 
 .image-left {
@@ -122,6 +128,10 @@
   padding: 10px;
   display: inline-block;
   vertical-align: middle;
+
+  &.home{
+    text-align: center;
+  }
 }
 
 // styles for navbar
@@ -210,8 +220,8 @@ th{
     margin-left: 25%;
     @media only screen and (min-width: 700px) {
         margin-top: 40px;
-        width: 33vw;
-        margin-left: 33%;
+        width: 25vw;
+        margin-left: 37%;
     }
 }
 
@@ -221,7 +231,10 @@ th{
     margin-top: 10%;
     margin-bottom: 5%;
     margin-left: 20%;
-    margin-right: 20%;
+    @media only screen and (min-width: 700px) {
+        margin-top: 40px;
+        margin-bottom: 15px;
+    }
 }
 
 .about-stuff{
@@ -229,6 +242,10 @@ th{
     font-size: .6em;
     padding: 10px;
     word-spacing: 10px;
+    @media only screen and (min-width: 1200px) {
+        display: none;
+
+    }
 }
 
 @media only screen and (max-width: 1200px) {
@@ -254,7 +271,7 @@ th{
 
     #footer{
         width:100vw;
-        }
+    }
 
     #footer .nav-item{
         font-size: 40%;
@@ -293,6 +310,6 @@ th{
         right:0;
     }
 
-   
+
 
 }
