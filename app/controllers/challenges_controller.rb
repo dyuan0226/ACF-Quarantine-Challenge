@@ -1,5 +1,7 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: [:show, :edit, :update]
+  before_action :check_login
+  authorize_resource
 
   # GET /challenges
   # GET /challenges.json
