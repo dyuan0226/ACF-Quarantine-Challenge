@@ -1,0 +1,34 @@
+
+<div class="container tab-bar justify-content-center ">
+  <ul class="nav nav-pills justify-content-center" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="tab1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-pressed="true">
+        Team</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="tab2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" >Individual</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+          <div class="container">
+            <div class="row p-2">
+                   <%= render :partial => "teams_list", locals: {teams: @teams} %>
+              
+            </div>
+          </div>
+    </div>
+
+    <div class="tab-pane" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+      <div class="container">
+        <div class="row p-2">
+        <%= render :partial => "users/users_list", locals: {teams: @teams} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

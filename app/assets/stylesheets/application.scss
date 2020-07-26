@@ -34,6 +34,26 @@ body{
     color:#77B6FF;
 }
 
+//Table Styling
+.text-center{
+    font-family: Open Sans;
+    color: #555151;
+    padding-top: 3%;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+th{
+    color:#8D8D8D;
+    font-weight:100;
+    text-transform: capitalize;
+}
+
+//Form styling
+.user-form{
+    width: 80%;
+    margin: 0 auto;
+}
 
 @media only screen and (max-width: 1200px) {
     .navbar-brand {
@@ -49,6 +69,7 @@ body{
 
     ul.navbar-nav{
         flex-direction: row;
+        padding:0;
     }
 
     #navlinks{
@@ -57,13 +78,16 @@ body{
 
     #footer{
         width:100vw;
-    }
+        }
 
     #footer .nav-item{
-        font-size: 80%;
+        font-size: 40%;
     }
+
+
   
   }
+
 
   @media only screen and (min-width: 1200px) {
     
