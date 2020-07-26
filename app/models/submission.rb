@@ -9,7 +9,7 @@ class Submission < ApplicationRecord
   validates_uniqueness_of :user_id, :scope => [:challenge_id]
 
   # Scopes
-
+  scope :completed,   -> { where('date_completed NOT NULL') }
 
   # Callbacks
   before_create do 

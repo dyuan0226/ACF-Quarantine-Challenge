@@ -23,9 +23,10 @@ class ChallengeTest < ActiveSupport::TestCase
   should_not allow_value(-7.8).for(:num_points)
 
   # Modify when we come up with the categories
-  should allow_value("Bible").for(:category)
-  should allow_value("Lifestyle").for(:category)
-  should allow_value("Creative").for(:category)
+  should allow_value("Spiritual").for(:category)
+  should allow_value("Physical").for(:category)
+  should allow_value("Social").for(:category)
+  should allow_value("Miscellaneous").for(:category)
   should_not allow_value("Anything else").for(:category)
   should_not allow_value(5).for(:category)
 
@@ -82,11 +83,11 @@ class ChallengeTest < ActiveSupport::TestCase
     end
 
     should "have a scope 'for_category' that works" do
-      assert_equal 2, Challenge.for_category("Bible").size
-      assert_equal [@memorize_2_tim, @read_john], Challenge.for_category("Bible").alphabetical
+      assert_equal 2, Challenge.for_category("Spiritual").size
+      assert_equal [@memorize_2_tim, @read_john], Challenge.for_category("Spiritual").alphabetical
 
-      assert_equal 1, Challenge.for_category("Creative").size
-      assert_equal [@write_poetry], Challenge.for_category("Creative").alphabetical
+      assert_equal 1, Challenge.for_category("Physical").size
+      assert_equal [@sleep_well], Challenge.for_category("Physical").alphabetical
     end
   end
 

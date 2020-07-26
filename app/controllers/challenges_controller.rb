@@ -5,7 +5,10 @@ class ChallengesController < ApplicationController
   # GET /challenges.json
   def index
     @challenges = Challenge.all.alphabetical.paginate(page: params[:active_page]).per_page(10)
-
+    @spiritual_challenges = Challenge.for_category("Spiritual").alphabetical.paginate(page: params[:active_page]).per_page(10)
+    @physical_challenges = Challenge.for_category("Physical").alphabetical.paginate(page: params[:active_page]).per_page(10)
+    @social_challenges = Challenge.for_category("Social").alphabetical.paginate(page: params[:active_page]).per_page(10)
+    @misc_challenges = Challenge.for_category("Miscellaneous").alphabetical.paginate(page: params[:active_page]).per_page(10)
   end
 
   # GET /challenges/1

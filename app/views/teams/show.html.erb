@@ -1,19 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @team.name %>
-</p>
+<div class="scroll">
+  <h3 class="centered"><%= @team.name %></h3>
+  <br />
+  <div class="extra-margin">
+    <% if @team_roster.empty? %>
+      <p>This team has no people lol</p>
+    <% else %>
+      <% @team_roster.each do |user| %> 
+        <div class="inline-card">
+          <%= image_tag 'x.PNG', class: 'image-left'  %>
+          <div class="card-body-inline">
+            <h5 class=""><%= link_to user.name, user_path(user) %></h5>
+            <p class="card-text">Last challenge completed:</p>
+            <p class="card-text"><%= user.previous_challenge.nil? ? 'n/a' : user.previous_challenge.name %><p>
+          </div>
+        </div>
+        <br />
+      <% end %>
+    <% end %>
+  </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @team.description %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @team.name %>
+  </p>
 
-<p>
-  <strong>Active:</strong>
-  <%= @team.active %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @team.description %>
+  </p>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+  <p>
+    <strong>Active:</strong>
+    <%= @team.active %>
+  </p>
+
+  <p> random textrandom textrandom textrandom textrandom text </p>
+  <p> random textrandom textrandom textrandom textrandom text </p>
+
+  <%= link_to 'Edit', edit_team_path(@team) %> |
+  <%= link_to 'Back', teams_path %>
+</div>

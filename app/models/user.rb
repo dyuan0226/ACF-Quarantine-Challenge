@@ -54,6 +54,18 @@ class User < ApplicationRecord
     self.submissions.map { |s| s.challenge.num_points }.sum
   end
 
+  def previous_challenge
+    if self.submissions.completed.first.nil? 
+      nil
+    else 
+      self.submissions.completed.first.challenge
+    end
+  end
+
+  def name 
+    self.first_name + " " + self.last_name 
+  end
+
   def challenges_completed 
     self.submissions.map{|s| s.challenge}
   end
