@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   resources :users
   resources :teams
 
-  root 'home#index'
+  root 'submissions#index'
 end
