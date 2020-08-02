@@ -5,6 +5,7 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all.sort_by {|t| t.total_points}
+    
   end
 
   # GET /teams/1
