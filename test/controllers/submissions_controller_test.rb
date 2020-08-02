@@ -28,8 +28,8 @@ class SubmissionsControllerTest < ActionDispatch::IntegrationTest
   test "should create submission when appropriate" do
     # create valid
     assert_difference('Submission.count') do
-      @challenge_new = FactoryBot.create(:challenge, name: "Read a book", description: "Read a good book", category: "Lifestyle", num_points: 20)
-      post submissions_path, params: { submission: { user: @user, challenge: @challenge_new, date_completed: Date.current } }
+      @challenge_new = FactoryBot.create(:challenge, name: "Read a book", description: "Read a good book", category: "Miscellaneous", num_points: 20)
+      post submissions_path, params: { submission: { user_id: @user.id, challenge_id: @challenge_new.id, date_completed: Date.current } }
     end
     assert_redirected_to submission_path(Submission.last)
   end
@@ -54,7 +54,7 @@ class SubmissionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should not update submission when inappropriate" do
     # update invalid
-    patch submission_path(@submission_2), params: { submission: { user: @user, challenge: @challenge, date_completed: Date.current } }
+    patch submission_path(@submission_2), params: { submission: { user: @user, challenge: @challenge, date_completed: Date.current + 1 } }
     assert_template :edit
   end
 

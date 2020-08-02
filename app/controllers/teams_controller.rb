@@ -7,6 +7,7 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all.sort_by {|t| t.total_points}
+    
   end
 
   # GET /teams/1
@@ -61,7 +62,6 @@ class TeamsController < ApplicationController
       flash[:notice] = "Successfully removed #{@team.name}."
       redirect_to teams_url
     else
-      @team_roster = User.for_team(@team.id).by_first_name
       render action: 'show'
     end
   end

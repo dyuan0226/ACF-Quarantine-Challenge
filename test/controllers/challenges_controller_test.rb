@@ -29,7 +29,7 @@ class ChallengesControllerTest < ActionDispatch::IntegrationTest
   test "should create challenge when appropriate" do
     # create valid
     assert_difference('Challenge.count') do
-      post challenges_path, params: { challenge: { name: "Read a book", description: "Read a good book", category: "Lifestyle", num_points: 20 } }
+      post challenges_path, params: { challenge: { name: "Read a book", description: "Read a good book", category: "Miscellaneous", num_points: 20 } }
     end
     assert_redirected_to challenge_path(Challenge.last)
   end
@@ -47,7 +47,7 @@ class ChallengesControllerTest < ActionDispatch::IntegrationTest
 
   test "should update challenge when appropriate" do
     # update valid
-    patch challenge_path(@challenge), params: { challenge: { name: "Read a book", description: "Read a good book", category: "Lifestyle", num_points: 20 } }
+    patch challenge_path(@challenge), params: { challenge: { name: "Read a book", description: "Read a good book", category: "Miscellaneous", num_points: 20 } }
     assert_equal "Challenge was successfully updated.", flash[:notice]
     assert_redirected_to challenge_path(@challenge)
   end

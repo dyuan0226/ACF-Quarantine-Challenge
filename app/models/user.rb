@@ -32,9 +32,15 @@ class User < ApplicationRecord
   scope :active,          -> { where(active: true) }
   scope :inactive,        -> { where.not(active: true) }
 
+  # Challenge Types
+  CHALLENGE_TYPES = ['Social', 'Spiritual', 'Physical', 'Misc']
+
+  
+
   def self.by_points
     User.all.sort_by { |u| u.points }.reverse
   end
+
 
   # Callbacks
   before_create do 
