@@ -26,7 +26,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should create user when appropriate" do
     # create valid
     assert_difference('User.count') do
-      post users_path, params: { user: { first_name: "John", last_name: "Smith", team: @team, username: "js023", role: "admin", email: "blah@yahoo.com", active: true } }
+      post users_path, params: { user: { first_name: "Bob", last_name: "Ross", team_id: @team.id, username: "bross", role: "admin", email: "bross@gmail.com", password: "secret", password_confirmation: "secret", active: true } }
     end
     assert_redirected_to user_path(User.last)
   end
