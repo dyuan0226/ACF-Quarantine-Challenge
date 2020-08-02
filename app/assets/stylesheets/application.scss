@@ -21,13 +21,13 @@
     padding: 5px 8px;
     margin: 10px;
   }
-  
+
   #flash_notice {
     background-color: #CFC;
     border: solid 1px #6C6;
     color: #008000;
   }
-  
+
   #flash_error, #flash_alert {
     background-color: #FCC;
     border: solid 1px #C66;
@@ -46,7 +46,7 @@
     transition: opacity 300ms ease-out;
     background-color: #008CBA;
     border-color: #0078a0;
-    color: #FFFFFF; } 
+    color: #FFFFFF; }
     .alert-box .close {
       right: 0.25rem;
       background: inherit;
@@ -200,7 +200,6 @@ body{
   padding:6px;
   display: inline-block;
   margin: 0 auto;
-  
 
   &.left-tab{
     margin-left: 20%;
@@ -218,10 +217,13 @@ body{
     }
 
     padding:2px;
-    
+    }
 }
 
-
+//New Team styling
+.new-team-form{
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 .tab-content{
