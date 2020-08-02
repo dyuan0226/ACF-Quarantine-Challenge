@@ -134,6 +134,13 @@
   }
 }
 
+.new-button{
+  text-align:center;
+  // width: 20%;
+  // margin-left: 40%;
+  // margin-right: 40%;
+}
+
 // styles for navbar
 body{
    font-family: 'Open Sans',serif !important;
@@ -177,6 +184,53 @@ body{
     color:#77B6FF;
 }
 
+//Challenges Styling
+.challenges-page{
+  text-align:center;
+  display: inline-block;
+}
+
+.challenges-content{
+  display:block;
+  width: 100vw;
+
+}
+
+.nav-tabs li {
+  padding:6px;
+  display: inline-block;
+  margin: 0 auto;
+  
+
+  &.left-tab{
+    margin-left: 20%;
+  }
+  &.right-tab{
+    margin-right: 20%;
+  }
+
+  @media only screen and (max-width: 700px) {
+    &.left-tab{
+      margin-left: 5%;
+    }
+    &.right-tab{
+      margin-right: 5%;
+    }
+
+    padding:2px;
+    
+}
+
+
+}
+
+.tab-content{
+  width: 60%;
+  margin-left: 20vw;
+}
+
+
+
 //Table Styling
 .text-center{
     font-family: Open Sans;
@@ -193,6 +247,11 @@ th{
 }
 
 //Form styling
+
+.form-class{
+  margin: 2%;
+}
+
 .user-form{
     width: 80%;
     margin: 0 auto;
