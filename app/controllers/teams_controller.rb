@@ -1,10 +1,13 @@
 class TeamsController < ApplicationController
   before_action :set_team, only: [:show, :edit, :update, :destroy]
+  before_action :check_login
+  authorize_resource
 
   # GET /teams
   # GET /teams.json
   def index
     @teams = Team.all.sort_by {|t| t.total_points}
+    
   end
 
   # GET /teams/1
