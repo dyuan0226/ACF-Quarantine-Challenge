@@ -1,5 +1,7 @@
 class SubmissionsController < ApplicationController
   before_action :set_submission, only: [:show, :edit, :update, :destroy]
+  before_action :check_login
+  authorize_resource
 
   # GET /submissions
   # GET /submissions.json
@@ -69,6 +71,6 @@ class SubmissionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def submission_params
-      params.require(:submission).permit(:challenge_id, :user_id, :date_completed)
+      params.require(:submission).permit(:challenge_id, :user_id, :date_completed, :image)
     end
 end
