@@ -59,7 +59,6 @@ class TeamsController < ApplicationController
       flash[:notice] = "Successfully removed #{@team.name}."
       redirect_to teams_url
     else
-      @team_roster = User.for_team(@team.id).by_first_name
       render action: 'show'
     end
   end
