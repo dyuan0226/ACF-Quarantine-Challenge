@@ -44,6 +44,7 @@ class Ability
       
     else
       # guests can only read some other stuff?
+      can :create, User
     end
   end
 end
