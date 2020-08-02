@@ -1,16 +1,23 @@
 <% if @challenges.empty? %>
   <h4>There are no challenges at this time.</h4>
 <% else %>
+
+  <div class="challenges-page">
   <h4>Challenges</h4>
 
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#all">All</a></li>
-    <li><a data-toggle="tab" href="#spiritual">Spiritual</a></li>
-    <li><a data-toggle="tab" href="#physical">Physical</a></li>
-    <li><a data-toggle="tab" href="#social">Social</a></li>
-    <li><a data-toggle="tab" href="#misc">Miscellaneous</a></li>
-  <ul>
+  <div class='challenges-content'>
 
+  <div>
+    <ul class="nav nav-tabs">
+      <li class="active left-tab"><a data-toggle="tab" href="#all">All</a></li>
+      <li><a data-toggle="tab" href="#spiritual">Spiritual</a></li>
+      <li><a data-toggle="tab" href="#physical">Physical</a></li>
+      <li><a data-toggle="tab" href="#social">Social</a></li>
+      <li class='right-tab'><a data-toggle="tab" href="#misc">Miscellaneous</a></li>
+    <ul>
+  </div>
+
+  <div>
   <div class="tab-content">
     <div id="all" class="tab-pane fade in active">
       <table class="table table-striped table-hover">
@@ -85,6 +92,10 @@
       </table>
     </div>
   </div>
+  </div>
+</div>
+
+</div>
 
   <p class="supertiny"></p>
   <br />

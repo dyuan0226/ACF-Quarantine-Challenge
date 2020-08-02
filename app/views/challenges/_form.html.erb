@@ -2,14 +2,20 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :category %>
+  <div class="form-inputs form-class">
+    <div class="form-group">
+      <%= f.input :name %>
+    </div>
+    <div class="form-group">
+        <%= f.input :description %>
+    </div>
+
+    <%= f.input :category, collection: User::CHALLENGE_TYPES%>
     <%= f.input :num_points %>
   </div>
 
-  <div class="form-actions">
+  <div class="form-actions btn btn-primary form-class">
     <%= f.button :submit %>
   </div>
+
 <% end %>
