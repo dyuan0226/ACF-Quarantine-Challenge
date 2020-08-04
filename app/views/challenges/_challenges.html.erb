@@ -2,10 +2,10 @@
   <h4>There are no challenges at this time.</h4>
 <% else %>
 
-  <div class="challenges-page">
+  <div class="table-page">
   <h4>Challenges</h4>
 
-  <div class='challenges-content'>
+  <div class='table-content'>
 
   <div>
     <ul class="nav nav-tabs">
@@ -101,4 +101,4 @@
   <br />
   <%= will_paginate @challenges, :param_name => 'challenge_page', previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>
 <% end %>
-    
+

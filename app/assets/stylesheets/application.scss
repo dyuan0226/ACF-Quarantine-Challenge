@@ -184,16 +184,19 @@ body{
     color:#77B6FF;
 }
 
-//Challenges Styling
-.challenges-page{
+//Challenges and Teams Styling
+.table-page{
   text-align:center;
   display: inline-block;
 }
 
-.challenges-content{
+.table-content{
   display:block;
   width: 100vw;
+}
 
+.table{
+    width: 100vw;
 }
 
 .nav-tabs li {
@@ -220,15 +223,15 @@ body{
     }
 }
 
-//New Team styling
-.new-team-form{
+.basic-margin{
     margin-left: 1%;
     margin-right: 1%;
 }
 
 .tab-content{
-  width: 60%;
+  width: 60vw;
   margin-left: 20vw;
+  margin-right: 20vw;
 }
 
 
@@ -240,6 +243,7 @@ body{
     padding-top: 3%;
     font-size: 2rem;
     font-weight: lighter;
+    text-align: center;
 }
 
 th{
@@ -249,7 +253,6 @@ th{
 }
 
 //Form styling
-
 .form-class{
   margin: 2%;
 }
