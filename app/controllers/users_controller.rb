@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all.by_points
+    @users = User.all.by_points.reverse
   end
 
   # GET /users/1
