@@ -1,4 +1,4 @@
-<%= form_with(model: team, local: true) do |form| %>
+<%= simple_form_for(@team) do |form| %>
   <% if team.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
@@ -11,22 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <div class="basic-margin">
+    <div class="form-inputs">
+      <div class="field form-group">
+        <%= form.input :name %>
+      </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+      <div class="field form-group">
+        <%= form.input :description %>
+      </div>
 
-  <div class="field">
-    <%= form.label :active %>
-    <%= form.check_box :active %>
-  </div>
+      <div class="field form-group">
+        <%= form.input :active %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <div class="form-actions btn btn-primary form-class">
+        <%= form.button :submit %>
+      </div>
+    </div>
   </div>
 <% end %>

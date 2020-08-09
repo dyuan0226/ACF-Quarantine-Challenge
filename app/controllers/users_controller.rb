@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   # before_action :check_login
-  authorize_resource
+  # authorize_resource
 
   # GET /users
   # GET /users.json
   def index
-    @users = User.all.by_points
+    @users = User.all.by_points.reverse
   end
 
   # GET /users/1
@@ -31,8 +31,12 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+        if (@user.role?(:admin)) 
+          format.html { redirect_to @user, notice: 'User was successfully created.' }
+          format.json { render :show, status: :created, location: @user }
+        elsif (@user.role?(:regular))
+          format.html { redirect_to login_path, notice: 'Successfully made your account. Login to start recording challenges!' }
+        end
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
