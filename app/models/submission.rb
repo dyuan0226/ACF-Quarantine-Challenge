@@ -2,7 +2,7 @@ class Submission < ApplicationRecord
   # Relationships
   belongs_to :challenge
   belongs_to :user
-  has_one_attached :image
+  has_one_attached :content
 
   # Validations
   validates_presence_of :user_id, :challenge_id

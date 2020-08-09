@@ -42,6 +42,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+# Use Google Cloud for storage
+gem "google-cloud-storage", "~> 1.11", require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
