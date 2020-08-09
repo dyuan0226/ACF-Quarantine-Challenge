@@ -17,6 +17,27 @@ class SubmissionTest < ActiveSupport::TestCase
   should_not allow_value(1.week.from_now.to_date).for(:date_completed)
   should_not allow_value("bad").for(:date_completed)
 
+  # Content Validation
+  # should validate_attached_of(:content)
+
+  # should validate_content_type_of(:content).allowing('image/png', 'image/gif')
+  # should validate_content_type_of(:content).rejecting('text/plain', 'text/xml')
+
+  # should validate_dimensions_of(:content).width(250)
+  # should validate_dimensions_of(:content).height(200)
+  # should validate_dimensions_of(:content).width_min(200)
+  # should validate_dimensions_of(:content).width_max(500)
+  # should validate_dimensions_of(:content).height_min(100)
+  # should validate_dimensions_of(:content).height_max(300)
+  # should validate_dimensions_of(:content).width_between(200..500)
+  # should validate_dimensions_of(:content).height_between(100..300)
+
+  # should validate_size_of(:content).less_than(50.kilobytes)
+  # should validate_size_of(:content).less_than_or_equal_to(50.kilobytes)
+  # should validate_size_of(:content).greater_than(1.kilobyte)
+  # should validate_size_of(:content).greater_than_or_equal_to(1.kilobyte)
+  # should validate_size_of(:content).between(100..500.kilobytes)
+
   context "Given context" do
     setup do
       create_teams

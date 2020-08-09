@@ -50,6 +50,7 @@ gem "google-cloud-storage", "~> 1.11", require: false
 
 # Other gems
 gem 'validates_timeliness', '4.0.2'
+gem 'active_storage_validations'
 gem 'time_date_helpers', '0.0.4'
 gem 'cancancan'
 gem 'simple-password-gen'
