@@ -19,6 +19,12 @@ class Submission < ApplicationRecord
       self.date_completed = Date.current
     end
   end
+  
+  after_rollback do
+    # purge blob and attachment
+    content.record.content_attachment.blob.purge
+    content.purge
+  end
 
   # Methods
   
