@@ -16,15 +16,13 @@
         </div>
     </div>
 
-    <% if !logged_in? %>
-      <div class="centered">
+    <div class="centered">
+      <% if !logged_in? %>
         <%= link_to "Login or Create an Account", login_path %>
-      </div>
-    <% else %>
-      <div class="centered">
+      <% else %>
         <%= link_to "Logout", logout_path %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
 </div>
 
 
