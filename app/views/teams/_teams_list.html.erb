@@ -27,7 +27,9 @@
 
     <br>
 
-    <%= link_to 'New Team', new_team_path, class: "btn btn-primary" %>
+    <% if current_user.role?(:admin) %>
+      <%= link_to 'New Team', new_team_path, class: "btn btn-primary" %>
+    <% end %>
 
   <%end%>
 </div>
