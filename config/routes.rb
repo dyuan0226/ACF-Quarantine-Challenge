@@ -14,10 +14,13 @@ Rails.application.routes.draw do
   get 'home/contact', to: 'home#contact', as: :contact
   get 'home/privacy', to: 'home#privacy', as: :privacy
 
+  get 
+
   resources :submissions
   resources :challenges
   resources :users
   resources :teams
+
 
   root 'home#index'
 end
