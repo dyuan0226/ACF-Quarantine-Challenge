@@ -5,15 +5,29 @@
   
     <ul class="navbar-nav ml-auto" id='navlinks'>
 		<li class="nav-item">
-			<li><%= link_to 'Leaderboard', teams_path %></li>
+			<li><%= link_to 'Leaderboard', leaderboard_path %></li>
   		</li>
 	 	 <li class="nav-item">
 	 		 <li><%= link_to 'Challenges', challenges_path %></li>
-	  	</li>
-	 	 <li class="nav-item">
-	  		<li><%= link_to 'Team', teams_path %></li></li>
+		  </li>
+
+		  <% if logged_in? %>
+					<% if current_user.role?(:admin) %>
+						<li class='nav-item'>
+							<%= link_to "Teams", teams_path %>
+						</li>
+					<% else current_user.role?(:regular) %> 
+						<li class='nav-item'>
+							<%= link_to "Team", team_path(current_user.team) %>
+						</li>
+					<% end %>
+				</li>
+		  <% end %> 
+
+		  
 	  	<li class="nav-item">
-		  <li><%= link_to 'Gallery', teams_path %></li></li>
+		  <%= link_to 'Gallery', teams_path %>
+		</li>
       <% if logged_in? %>
         <li class="nav-item"><%= link_to 'Logout', logout_path %></li>
       <% else %>
