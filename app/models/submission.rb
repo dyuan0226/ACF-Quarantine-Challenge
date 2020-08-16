@@ -11,6 +11,7 @@ class Submission < ApplicationRecord
 
   # Scopes
   scope :completed,   -> { where('date_completed NOT NULL') }
+  scope :for_challenge, -> (challenge){ where('challenge_id = ?', challenge.id) }
 
   # Callbacks
   before_create do 
