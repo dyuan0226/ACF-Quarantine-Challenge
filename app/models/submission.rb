@@ -11,7 +11,15 @@ class Submission < ApplicationRecord
   validates_uniqueness_of :user_id, :scope => [:challenge_id]
 
   # Scopes
-  scope :completed,   -> { where('date_completed NOT NULL') }
+  scope :chronological,   -> { order('date_completed DESC') }
+  scope :by_challenge,    -> { joins(:challenge).order('challenges.name ASC, date_completed DESC') }
+  scope :by_user,         -> { joins(:user).order('users.first_name ASC, users.last_name ASC, date_completed DESC') }
+  scope :for_team,        -> (team){ joins(:user).where('team_id = ?', team.id) }
+  scope :for_user,        -> (user){ where('user_id = ?', user.id) }
+  scope :for_date,        -> (date){ where('date_completed = ?', date) }
+  scope :for_challenge,   -> (challenge){ where('challenge_id = ?', challenge.id) }
+  scope :for_category,    -> (category){ joins(:challenge).where('category = ?', category) }
+  scope :for_past_days,   -> (x){ where("date_completed BETWEEN ? AND ?", Date.current.to_date - x.days, Date.current.to_date) }
 
   # Callbacks
   before_create do 
