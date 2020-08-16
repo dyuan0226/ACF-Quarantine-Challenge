@@ -1,31 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Submissions</h1>
+<h1 class="centered">Submissions</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Challenge</th>
-      <th>User</th>
-      <th>Date completed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div>
+  <%= link_to 'New Submission', new_submission_path, class: "btn btn-primary creation-button" %>
+</div>
 
-  <tbody>
-    <% @submissions.each do |submission| %>
-      <tr>
-        <td><%= submission.challenge %></td>
-        <td><%= submission.user %></td>
-        <td><%= submission.date_completed %></td>
-        <td><%= link_to 'Show', submission %></td>
-        <td><%= link_to 'Edit', edit_submission_path(submission) %></td>
-        <td><%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="submissions-area">
+  <% @submissions.each do |submission| %>
+    <div class="submission">
+      <div class="title"><%= submission.challenge.name %></div>
+      <div><%= submission.user.name %></div>
+      <div class="placeholder-pic"></div>
+      <div><%= submission.date_completed %></div>
+      <div class="show-edit-destroy">
+        <%= link_to 'Show', submission %>
+        <%= link_to 'Edit', edit_submission_path(submission) %>
+        <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </div>
+  <% end %>
+<div>
+
 
 <br>
-
-<%= link_to 'New Submission', new_submission_path %>
