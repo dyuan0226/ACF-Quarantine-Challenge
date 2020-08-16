@@ -16,9 +16,13 @@
         </div>
     </div>
 
-    <% if current_user.nil? %>
+    <% if !logged_in? %>
       <div class="centered">
         <%= link_to "Login or Create an Account", login_path %>
+      </div>
+    <% else %>
+      <div class="centered">
+        <%= link_to "Logout", logout_path %>
       </div>
     <% end %>
 </div>
