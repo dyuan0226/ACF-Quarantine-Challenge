@@ -20,14 +20,15 @@ class Submission < ApplicationRecord
   scope :for_challenge,   -> (challenge){ where('challenge_id = ?', challenge.id) }
   scope :for_category,    -> (category){ joins(:challenge).where('category = ?', category) }
   scope :for_past_days,   -> (x){ where("date_completed BETWEEN ? AND ?", Date.current.to_date - x.days, Date.current.to_date) }
+  scope :completed,       -> { where("date_completed NOT null") }
 
   # Callbacks
-  before_create do 
+  before_create do
     if self.date_completed.nil?
       self.date_completed = Date.current
     end
   end
-  
+
   after_rollback do
     unless content.record.content_attachment.nil?
       # purge blob and attachment
@@ -37,7 +38,6 @@ class Submission < ApplicationRecord
   end
 
   # Methods
-  
 
   private
 end
