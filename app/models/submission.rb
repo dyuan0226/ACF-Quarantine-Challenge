@@ -6,7 +6,7 @@ class Submission < ApplicationRecord
 
   # Validations
   validates_presence_of :user_id, :challenge_id, :content
-  validates :content, attached: true, content_type: [:png, :jpg, :jpeg], size: { less_than: 10.megabytes , message: 'is too large' }
+  validates :content, attached: true, size: { less_than: 14.megabytes , message: 'must be less than 14 MB' }
   validates_date :date_completed, on_or_before: ->{ Date.current }, allow_blank: true, on_or_before_message: "cannot be in the future"
   validates_uniqueness_of :user_id, :scope => [:challenge_id]
 
@@ -29,9 +29,11 @@ class Submission < ApplicationRecord
   end
   
   after_rollback do
-    # purge blob and attachment
-    content.record.content_attachment.blob.purge
-    content.purge
+    unless content.record.content_attachment.nil?
+      # purge blob and attachment
+      content.record.content_attachment.blob.purge
+      content.purge
+    end
   end
 
   # Methods

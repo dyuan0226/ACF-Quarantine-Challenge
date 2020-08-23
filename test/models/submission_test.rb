@@ -23,16 +23,7 @@ class SubmissionTest < ActiveSupport::TestCase
   # should validate_content_type_of(:content).allowing('image/png', 'image/gif')
   # should validate_content_type_of(:content).rejecting('text/plain', 'text/xml')
 
-  # should validate_dimensions_of(:content).width(250)
-  # should validate_dimensions_of(:content).height(200)
-  # should validate_dimensions_of(:content).width_min(200)
-  # should validate_dimensions_of(:content).width_max(500)
-  # should validate_dimensions_of(:content).height_min(100)
-  # should validate_dimensions_of(:content).height_max(300)
-  # should validate_dimensions_of(:content).width_between(200..500)
-  # should validate_dimensions_of(:content).height_between(100..300)
-
-  should validate_size_of(:content).less_than_or_equal_to(10.megabytes)
+  should validate_size_of(:content).less_than_or_equal_to(14.megabytes)
 
   context "Given context" do
     setup do
