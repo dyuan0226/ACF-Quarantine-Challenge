@@ -188,6 +188,10 @@ body{
     color:#77B6FF;
 }
 
+.icon {
+  margin: 0 3vw;
+}
+
 //Challenges and Teams Styling
 .table-page{
   text-align:center;
@@ -233,7 +237,6 @@ body{
 }
 
 .tab-content{
-  width: 60vw;
   margin-left: 20vw;
   margin-right: 20vw;
 }
@@ -267,7 +270,7 @@ th{
 .row{
     position: relative;
     text-align: center;
-    width: 80%;
+    width: 100%;
     left: 50%;
     //top: 60%;
     margin-right: 50%;
