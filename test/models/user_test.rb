@@ -12,7 +12,6 @@ class UserTest < ActiveSupport::TestCase
   should belong_to(:team)
   should have_many(:submissions)
   should have_many(:challenges).through(:submissions)
-  # should have_many(:photos).through(:submissions)  - i'm not sure if this is necessary or makes logical sense, same for challenges
 
   # Validation Tests
   should validate_presence_of(:first_name)

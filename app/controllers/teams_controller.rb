@@ -43,6 +43,7 @@ class TeamsController < ApplicationController
 
   def leaderboard
     @teams = Team.all.sort_by {|t| t.total_points}.reverse
+
   end
 
 

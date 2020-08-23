@@ -24,7 +24,7 @@ class User < ApplicationRecord
   validates_inclusion_of :role, in: %w[admin regular], message: "is not recognized in the system"
 
   # Scopes
-  scope :for_team,        -> (team){ where('team_id == ?', team.id) }
+  scope :for_team,        -> (team){ where('team_id = ?', team.id) }
   scope :for_challenge,   -> (challenge){ joins(:submissions).where('submissions.challenge_id = ? AND submissions.date_completed NOT NULL', challenge.id) }
   scope :for_role,        -> (role){ where('role = ?', role) }
   scope :by_last_name,    -> { order('last_name ASC') }
@@ -35,8 +35,6 @@ class User < ApplicationRecord
   # Challenge Types
   CHALLENGE_TYPES = ['Social', 'Spiritual', 'Physical', 'Miscellaneous']
   POINT_VALUES = ["1", "2"]
-
-  
 
   def self.by_points
     User.all.sort_by { |u| u.points }.reverse
