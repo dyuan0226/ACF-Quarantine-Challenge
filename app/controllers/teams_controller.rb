@@ -7,7 +7,7 @@ class TeamsController < ApplicationController
   # GET /teams.json
   def index
     @teams = Team.all.sort_by {|t| t.total_points}.reverse
-
+    @users = User.all.by_points.reverse
   end
 
   # GET /teams/1
@@ -43,7 +43,10 @@ class TeamsController < ApplicationController
 
   def leaderboard
     @teams = Team.all.sort_by {|t| t.total_points}.reverse
+    @users = User.all.by_points
   end
+
+
 
   # PATCH/PUT /teams/1
   # PATCH/PUT /teams/1.json

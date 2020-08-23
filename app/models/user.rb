@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # include AppHelpers::Deletions
 
   has_secure_password
+  attr_accessor :admin_password
 
   # Relationships
   belongs_to :team
@@ -17,9 +18,10 @@ class User < ApplicationRecord
   validates_format_of :last_name, with: /\A([A-Z])[a-z]+\z/, message: "Last name should be capitalized!"
   validates_uniqueness_of :username, case_sensitive: false
   validates_uniqueness_of :email, case_sensitive: false
-  validates_presence_of :password, :on => :create 
-  validates_presence_of :password_confirmation, :on => :create 
+  validates_presence_of :password, :on => :create
+  validates_presence_of :password_confirmation, :on => :create
   validates_confirmation_of :password, message: "does not match"
+  validates_presence_of :admin_password, :on => :create, allow_blank: true
   validates_length_of :password, :minimum => 4, message: "must be at least 4 characters long", :allow_blank => true
   validates_inclusion_of :role, in: %w[admin regular], message: "is not recognized in the system"
 
@@ -40,12 +42,14 @@ class User < ApplicationRecord
     User.all.sort_by { |u| u.points }.reverse
   end
 
-
   # Callbacks
-  before_create do 
-    if self.role.nil?
+  before_validation do 
+    if self.admin_password == "password"
+      self.role = "admin"
+    else
       self.role = "regular"
     end
+    self.active = true
   end
 
   before_destroy -> { handle_deletion_request() }
@@ -60,18 +64,18 @@ class User < ApplicationRecord
   end
 
   def previous_challenge
-    if self.submissions.completed.first.nil? 
+    if self.submissions.completed.first.nil?
       nil
-    else 
+    else
       self.submissions.completed.first.challenge
     end
   end
 
-  def name 
-    self.first_name + " " + self.last_name 
+  def name
+    self.first_name + " " + self.last_name
   end
 
-  def challenges_completed 
+  def challenges_completed
     self.submissions.map{|s| s.challenge}
   end
 
@@ -81,7 +85,7 @@ class User < ApplicationRecord
   end
 
   def make_inactive
-    self.active = false 
+    self.active = false
     self.save!
   end
 
@@ -93,7 +97,7 @@ class User < ApplicationRecord
   private
   attr_accessor :destroyable
 
-  # Multiple models do not allow for deletions, so we can 
+  # Multiple models do not allow for deletions, so we can
   # create a simple method here for callbacks to use as needed
   def cannot_destroy_object
     self.destroyable = false
@@ -107,5 +111,5 @@ class User < ApplicationRecord
     self.make_inactive
     cannot_destroy_object()
   end
-  
+
 end
