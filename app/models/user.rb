@@ -33,7 +33,8 @@ class User < ApplicationRecord
   scope :inactive,        -> { where.not(active: true) }
 
   # Challenge Types
-  CHALLENGE_TYPES = ['Social', 'Spiritual', 'Physical', 'Misc']
+  CHALLENGE_TYPES = ['Social', 'Spiritual', 'Physical', 'Miscellaneous']
+  POINT_VALUES = ["1", "2"]
 
   def self.by_points
     User.all.sort_by { |u| u.points }.reverse

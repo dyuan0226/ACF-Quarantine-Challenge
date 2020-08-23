@@ -41,6 +41,10 @@ class TeamsController < ApplicationController
     end
   end
 
+  def leaderboard
+    @teams = Team.all.sort_by {|t| t.total_points}.reverse
+  end
+
   # PATCH/PUT /teams/1
   # PATCH/PUT /teams/1.json
   def update

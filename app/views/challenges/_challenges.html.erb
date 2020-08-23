@@ -35,6 +35,7 @@
         <% end %>
       </table>
     </div>
+    
     <div id="spiritual" class="tab-pane fade">
       <table class="table table-striped table-hover">
         <thead class = "thead-dark">
@@ -49,6 +50,7 @@
         <% end %>
       </table>
     </div>
+
     <div id="physical" class="tab-pane fade">
       <table class="table table-striped table-hover">
         <thead class = "thead-dark">
@@ -63,12 +65,14 @@
         <% end %>
       </table>
     </div>
+
     <div id="social" class="tab-pane fade">
       <table class="table table-striped table-hover">
         <thead class = "thead-dark">
           <th>Name</th>
           <th>Number of Points</th>
         </thead>
+
         <% for challenge in @social_challenges %>
           <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
             <td><%= link_to challenge.name, challenge_path(challenge) %></td>
@@ -77,6 +81,7 @@
         <% end %>
       </table>
     </div>
+
     <div id="misc" class="tab-pane fade">
       <table class="table table-striped table-hover">
         <thead class = "thead-dark">
