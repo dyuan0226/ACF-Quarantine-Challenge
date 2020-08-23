@@ -11,7 +11,7 @@
     <div class="submission">
       <div class="title"><%= submission.challenge.name %></div>
       <div><%= submission.user.name %></div>
-      <div class="placeholder-pic"></div>
+      <div><%= image_tag(submission.content) %></div>
       <div><%= submission.date_completed %></div>
       <div class="show-edit-destroy">
         <%= link_to 'Show', submission %>
