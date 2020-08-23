@@ -6,7 +6,6 @@
   <div class="form-inputs">
     <%= f.association :challenge %>
     <%= f.association :user %>
-    <%= f.input :date_completed, input_html: {value: f.object.date_completed || Date.today} %>
   </div>
 
   <div class="field">
