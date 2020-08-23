@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :users
   resources :teams
 
+  get 'leaderboards/teams', to: 'teams#leaderboard', as: :leaderboard
 
   root 'home#index'
 end
