@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # include AppHelpers::Deletions
 
   has_secure_password
+  attr_accessor :admin_password
 
   # Relationships
   belongs_to :team
@@ -20,6 +21,7 @@ class User < ApplicationRecord
   validates_presence_of :password, :on => :create 
   validates_presence_of :password_confirmation, :on => :create 
   validates_confirmation_of :password, message: "does not match"
+  validates_presence_of :admin_password, :on => :create, allow_blank: true
   validates_length_of :password, :minimum => 4, message: "must be at least 4 characters long", :allow_blank => true
   validates_inclusion_of :role, in: %w[admin regular], message: "is not recognized in the system"
 
@@ -40,12 +42,14 @@ class User < ApplicationRecord
     User.all.sort_by { |u| u.points }.reverse
   end
 
-
   # Callbacks
-  before_create do 
-    if self.role.nil?
+  before_validation do 
+    if self.admin_password == "password"
+      self.role = "admin"
+    else
       self.role = "regular"
     end
+    self.active = true
   end
 
   before_destroy -> { handle_deletion_request() }
