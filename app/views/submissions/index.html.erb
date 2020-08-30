@@ -6,7 +6,7 @@
   <%= link_to 'New Submission', new_submission_path, class: "btn btn-primary creation-button" %>
 </div>
 
-<div class="submissions-area">
+<div class="submissions-area footer-padding">
   <% @submissions.each do |submission| %>
     <div class="submission">
       <div class="title"><%= submission.challenge.name %></div>

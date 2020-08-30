@@ -87,10 +87,12 @@
     .alert-box.alert-close {
       opacity: 0; }
 
-// use this class as a wrapper div for every single page
-
 .relative-wrapper {
   position: relative;
+}
+
+.footer-padding {
+  padding-bottom: 70px;
 }
 
 .scroll {
