@@ -6,8 +6,8 @@ FactoryBot.define do
     username { "rickyma" }
     password { "secret" }
     password_confirmation { "secret" }
-    role { "regular" }
+    admin_password { nil }
     email { "rickyma@gmail.com" }
-    active { true }
+    active { nil }
   end
 end

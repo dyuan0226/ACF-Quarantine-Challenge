@@ -9,7 +9,6 @@ class User < ApplicationRecord
   belongs_to :team
   has_many :submissions
   has_many :challenges, through: :submissions
-  has_many :photos, through: :submissions
 
   # Validations
   validates_presence_of :first_name, :last_name, :username, :team_id, :email
@@ -22,8 +21,8 @@ class User < ApplicationRecord
   validates_presence_of :password_confirmation, :on => :create
   validates_confirmation_of :password, message: "does not match"
   validates_presence_of :admin_password, :on => :create, allow_blank: true
-  validates_length_of :password, :minimum => 4, message: "must be at least 4 characters long", :allow_blank => true
-  validates_inclusion_of :role, in: %w[admin regular], message: "is not recognized in the system"
+  validates_length_of :password, :minimum => 4, message: "must be at least 4 characters long", allow_blank: true
+  validates_inclusion_of :role, in: %w[admin regular], message: "is not recognized in the system", allow_blank: true
 
   # Scopes
   scope :for_team,        -> (team){ where('team_id = ?', team.id) }
@@ -49,7 +48,9 @@ class User < ApplicationRecord
     else
       self.role = "regular"
     end
-    self.active = true
+    if self.active.nil?
+      self.active = true
+    end
   end
 
   before_destroy -> { handle_deletion_request() }

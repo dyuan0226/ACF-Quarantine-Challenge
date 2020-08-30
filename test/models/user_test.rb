@@ -47,10 +47,6 @@ class UserTest < ActiveSupport::TestCase
 
   should allow_value("admin").for(:role)
   should allow_value("regular").for(:role)
-  should_not allow_value(1234).for(:role)
-  should_not allow_value(1.2).for(:role)
-  should_not allow_value(true).for(:role)
-  should_not allow_value("anything else").for(:role)
 
   should allow_value("ricky-ma-29@gmail.com").for(:email)
   should allow_value("david_yuan_09@gmail.com").for(:email)
@@ -99,7 +95,7 @@ class UserTest < ActiveSupport::TestCase
 
     # unsure if this test is sufficient, might cause problems later on
     should "automatically set role to regular" do  
-      unfilled_role = FactoryBot.build(:user, first_name: "Imposter", last_name: "Ma", team: @top_team_active, username: "rma1", email: "rma1@gmail.com", active: true)
+      unfilled_role = FactoryBot.create(:user, first_name: "Imposter", last_name: "Ma", team: @top_team_active, username: "rma1", email: "rma1@gmail.com")
       assert_equal "regular", unfilled_role.role 
     end
 
@@ -172,6 +168,5 @@ class UserTest < ActiveSupport::TestCase
     should "have a scope that returns all inactive users" do 
       assert_equal ["Inactive", "Inactive"], User.inactive.map{|u| u.first_name}.sort
     end
-
   end
 end
