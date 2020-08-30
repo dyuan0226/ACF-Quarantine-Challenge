@@ -15,14 +15,14 @@
             <a class='small-link' href="home/privacy">Privacy</a>
         </div>
     </div>
+</div>
 
-    <div class="centered">
-      <% if !logged_in? %>
-        <%= link_to "Login or Create an Account", login_path %>
-      <% else %>
-        <%= link_to "Logout", logout_path %>
-      <% end %>
-    </div>
+<div class="centered">
+  <% if !logged_in? %>
+    <%= link_to "Login or Create an Account", login_path %>
+  <% else %>
+    <%= link_to "Logout", logout_path %>
+  <% end %>
 </div>
 
 
