@@ -24,7 +24,7 @@
   </div>
 
   <div>
-  <div class="tab-content">
+  <div class="tab-content challenge">
     <div id="all_user" class="tab-pane fade in active">
       <table class="table table-striped table-hover">
         <thead class = "thead-dark">
@@ -38,7 +38,7 @@
             <td><%= link_to challenge.name, challenge_path(challenge) %></td>
             <td><%= challenge.category %></td>
             <td><%= challenge.num_points %></td>
-            <td><%= challenge.users.find(current_user.id).submissions.for_challenge(challenge).first.date_completed.nil? ? 'nope' :  challenge.users.find(current_user.id).submissions.for_challenge(challenge).first.date_completed %></td> 
+            <td><%= challenge.users.find(current_user.id).submissions.for_challenge(challenge).first.date_completed.nil? ? 'nope' :  challenge.users.find(current_user.id).submissions.for_challenge(challenge).first.date_completed %></td>
           </tr>
         <% end %>
       </table>

@@ -15,7 +15,7 @@
       <% @users.each do |user| %>
         <tr>
           <td><%= @users.find_index(user) + 1 %></td>
-          <td><%= user.name %></td>
+          <td><%= link_to user.name, user_path(user) %></td>
           <td><%= user.points %></td>
         </tr>
       <% end %>

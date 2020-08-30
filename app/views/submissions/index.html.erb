@@ -11,7 +11,7 @@
     <div class="submission">
       <div class="title"><%= submission.challenge.name %></div>
       <div><%= submission.user.name %></div>
-      <div><%= image_tag(submission.content) %></div>
+      <div><%= image_tag(submission.content, size: "250x250")%></div>
       <div><%= submission.date_completed %></div>
       <% if current_user.role?(:admin) %>
         <div class="show-edit-destroy">
