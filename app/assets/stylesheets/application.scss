@@ -21,13 +21,13 @@
     padding: 5px 8px;
     margin: 10px;
   }
-  
+
   #flash_notice {
     background-color: #CFC;
     border: solid 1px #6C6;
     color: #008000;
   }
-  
+
   #flash_error, #flash_alert {
     background-color: #FCC;
     border: solid 1px #C66;
@@ -46,7 +46,7 @@
     transition: opacity 300ms ease-out;
     background-color: #008CBA;
     border-color: #0078a0;
-    color: #FFFFFF; } 
+    color: #FFFFFF; }
     .alert-box .close {
       right: 0.25rem;
       background: inherit;
@@ -107,7 +107,7 @@
 }
 
 .inline-card {
-   width: 100%;
+   width: 80%;
    border: 2px black;
    background-color: rgba(167, 165, 165, 0.48);
    border-radius: 8px;
@@ -115,10 +115,9 @@
 //    line-height: 150px;
 //    overflow: auto;
     &.home{
-        margin-left: 10%;
-        margin-right: 10%;
-        width: 80%;
+        margin: 0 auto;
         text-align: center;
+
     }
 }
 
@@ -206,48 +205,32 @@ body{
 .challenges-content{
   display:block;
   width: 100vw;
+}
 
-<<<<<<< HEAD
 .p-2{
   justify-content: center;
-=======
->>>>>>> b4abff55566d3c67505d9dd79fca3dcb401b4991
 }
 
 .nav-tabs li {
   padding:6px;
   display: inline-block;
   margin: 0 auto;
-  
+  white-space: nowrap;
+  padding:12px;
 
   &.left-tab{
-    margin-left: 20%;
+    margin-left: 4%;
   }
   &.right-tab{
-    margin-right: 20%;
+    margin-right: 4%;
   }
-
-  @media only screen and (max-width: 700px) {
-    &.left-tab{
-      margin-left: 5%;
-    }
-    &.right-tab{
-      margin-right: 5%;
-    }
-
-    padding:2px;
-    
-}
-
-
 }
 
 .tab-content{
-  width: 60%;
-  margin-left: 20vw;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
 }
-
-
 
 //Table Styling
 .text-center{
@@ -273,20 +256,27 @@ th{
 .user-form{
     width: 80%;
     margin: 0 auto;
-.row{
+
+  .row{
     position: relative;
     text-align: center;
     width: 100%;
-    left: 50%;
+    margin: 0 auto;
+    //left: 50%;
     //top: 60%;
-    margin-right: 50%;
-    margin-top: 15%;
-    transform: translate(-50%, -50%);
+    //margin-right: 50%;
+    //margin-top: 15%;
+    //transform: translate(-50%, -50%);
 
     @media only screen and (min-width: 700px) {
         margin-top: 60px;
     }
+  }
 }
+
+.col{
+  text-align: center;
+  margin: 0 auto;
 }
 
 .homepage-logo{
@@ -321,44 +311,44 @@ th{
     word-spacing: 10px;
     @media only screen and (min-width: 1200px) {
         display: none;
-
     }
 }
 
+
 @media only screen and (max-width: 1200px) {
-    .navbar-brand {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .navbar #title{
-        font-size: 1.5em;
-    }
-
-    ul.navbar-nav{
-        flex-direction: row;
-        padding:0;
-    }
-
-    #navlinks{
-        display:none;
-    }
-
-    #footer{
-        width:100vw;
-    }
-
-    #footer .nav-item{
-        font-size: 40%;
-    }
-
-    #info-footer{
-        display:none;
-    }
-
+  .navbar-brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
+
+  .navbar #title{
+      font-size: 1.5em;
+  }
+
+  ul.navbar-nav{
+      flex-direction: row;
+      padding:0;
+  }
+
+  #navlinks{
+      display:none;
+  }
+
+  #footer{
+      width:100vw;
+  }
+
+  #footer .nav-item{
+      font-size: 40%;
+  }
+
+  #info-footer{
+      display:none;
+  }
+}
+
 
 
   @media only screen and (min-width: 1200px) {
@@ -384,7 +374,7 @@ th{
         bottom: 0;
         width: 100%;
     }
-}
+  }
 
 .creation-button {
   width: 20px;
@@ -435,7 +425,7 @@ th{
 
   .caption {
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
