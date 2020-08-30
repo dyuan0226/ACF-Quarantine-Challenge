@@ -4,7 +4,11 @@
                                                      secondary: nil,
                                                      sidebar: nil} %>
 
-
+<%= render partial: "partials/structure1", locals: {model_name: "challenge", 
+                                                     primary: "user_challenges", 
+                                                     secondary: nil,
+                                                     sidebar: nil} %>
+<div class="footer-padding"></div>
 
 <% if current_user.role?(:admin) %>
   <p class='new-button'><strong>

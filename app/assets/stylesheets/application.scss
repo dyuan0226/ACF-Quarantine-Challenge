@@ -87,10 +87,12 @@
     .alert-box.alert-close {
       opacity: 0; }
 
-// use this class as a wrapper div for every single page
-
 .relative-wrapper {
   position: relative;
+}
+
+.footer-padding {
+  padding-bottom: 70px;
 }
 
 .scroll {
@@ -103,7 +105,20 @@
 
 // styles for team show page
 .centered {
-  text-align: center;
+  margin: 0 auto;
+}
+
+.login-card {
+  @media only screen and (min-width: 1200px) {
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 40%;
+  }
+  
+  padding: 10px;
+  border: 1px solid grey;
+  margin: 10px;
+  background-color: rgba(167, 165, 165, 0.48);
 }
 
 .inline-card {
@@ -143,6 +158,7 @@
   // width: 20%;
   // margin-left: 40%;
   // margin-right: 40%;
+  margin-bottom: 40px;
 }
 
 // styles for navbar
@@ -167,6 +183,7 @@ body{
     margin: auto;
     width: 25%;
     margin-left: 20px;
+    white-space: nowrap;
 }
 
 #title{

@@ -5,7 +5,7 @@
 <% misc_challenges = current_user.challenges.for_category("Miscellaneous").paginate(page: params[:active_page]).per_page(10) %>
 
 <% if challenges.empty? %>
-  <h4 class="centered"> There are no challenges at this time.</h4>
+  <h4 class="centered">You have not completed any challenges yet :(.</h4>
 <% else %>
 
   <div class="table-page">

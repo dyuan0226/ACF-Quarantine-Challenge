@@ -2,6 +2,7 @@ require "test_helper"
 
 class ChallengesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login_admin
     @challenge = FactoryBot.create(:challenge)
   end
 

@@ -26,7 +26,7 @@ class AbilityTest < ActiveSupport::TestCase
       assert @ricky_ability.can? :show, @matt_bottom_team
 
       # but can only edit self
-      deny @ricky_ability.can? :create, User
+      assert @ricky_ability.can? :create, User
       deny @ricky_ability.can? :edit, @david_top_team
       assert @ricky_ability.can? :edit, @ricky_bottom_team
       deny @ricky_ability.can? :update, @david_top_team

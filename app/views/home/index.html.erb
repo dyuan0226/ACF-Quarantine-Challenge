@@ -1,17 +1,27 @@
 <%= image_tag 'logo.png', class: 'homepage-logo'  %>
 
-<div class="inline-card home">
-    <div class="card-body-inline home">
-        <h4>Welcome!</h4>
-        <p>The ACF Quarantine Challenge is an app created for the Asian Christian Fellowship
-        to help keep its members connected over quarantine.
-        Join a team to participate in fun challenges and collaborate with other students!
-        </p>
+<div class="row footer-padding">
+    <div class="inline-card home">
+        <div class="card-body-inline home">
+            <h4>Welcome!</h4>
+            <p>The ACF Quarantine Challenge is an app created for the Asian Christian Fellowship
+            to help keep its members connected over quarantine.
+            Join a team to participate in fun challenges and collaborate with other students!
+            </p>
+        </div>
+        <div class="about-stuff">
+            <a class='small-link' href="home/about">About</a>
+            <a class='small-link' href="home/contact">Contact</a>
+            <a class='small-link' href="home/privacy">Privacy</a>
+        </div>
     </div>
-    <div class="about-stuff">
-        <a class='small-link' href="home/about">About</a>
-        <a class='small-link' href="home/contact">Contact</a>
-        <a class='small-link' href="home/privacy">Privacy</a>
+
+    <div class="centered">
+      <% if !logged_in? %>
+        <%= link_to "Login or Create an Account", login_path %>
+      <% else %>
+        <%= link_to "Logout", logout_path %>
+      <% end %>
     </div>
 </div>
 

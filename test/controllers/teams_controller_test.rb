@@ -2,6 +2,7 @@ require "test_helper"
 
 class TeamsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login_admin
     @team = FactoryBot.create(:team)
   end
 
@@ -62,7 +63,7 @@ class TeamsControllerTest < ActionDispatch::IntegrationTest
   end
   
   test "should not destroy team" do
-    @user = FactoryBot.create(:user, first_name: "David", last_name: "Yuan", team: @team, username: "dyuan", role: "admin", email: "dyuan@gmail.com", active: true)
+    @user = FactoryBot.create(:user, first_name: "David", last_name: "Yuan", team: @team, username: "dyuan1", role: "admin", email: "dyuan1@gmail.com", active: true)
     
     assert_difference('Team.count', 0) do
       delete team_path(@team)

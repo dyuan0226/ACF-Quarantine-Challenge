@@ -1,25 +1,29 @@
-<%= form_with url: sessions_path, local: true do |f| %>
-  <div class="control-group">
-    <%= f.label :username %>
-    <div class="controls">
-      <%= f.text_field :username %>
+<div class="login-card">
+  <h4 style="text-align: center;">Login</h4>
+  <%= form_with url: sessions_path, local: true do |f| %>
+    <div class="control-group">
+      <%= f.label :username %>
+      <div class="controls">
+        <%= f.text_field :username %>
+      </div>
     </div>
-  </div>
 
-  <div class="control-group">
-    <%= f.label :password %>
-    <div class="controls">
-      <%= f.password_field :password %>
+    <div class="control-group">
+      <%= f.label :password %>
+      <div class="controls">
+        <%= f.password_field :password %>
+      </div>
     </div>
-  </div>
-  
-  <div class="actions"><%= f.submit "Log In" %></div>
+    <br />
+    
+    <div class="actions btn"><%= f.submit "Log In" %></div>
 
-  <br />
-  <br />
-  <br />
-  
-  <div class="new_account">
-    <p>New User? <%= link_to 'Create New Account', new_user_path %></p>
-  </div>
-<% end %>
+    <br />
+    <br />
+    <br />
+    
+    <div class="new_account">
+      <p>New User? <%= link_to 'Create New Account', new_user_path %></p>
+    </div>
+  <% end %>
+</div>
