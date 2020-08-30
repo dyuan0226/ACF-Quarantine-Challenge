@@ -21,5 +21,21 @@
     <% end %>
   </div>
 
+  <p>
+    <strong>Description:</strong>
+    <%= @team.description %>
+  </p>
 
+  <p>
+    <strong>Active:</strong>
+    <%= @team.active %>
+  </p>
+
+  <p> random textrandom textrandom textrandom textrandom text </p>
+  <p> random textrandom textrandom textrandom textrandom text </p>
+
+  <% if current_user.role?(:admin) %>
+    <%= link_to 'Edit', edit_team_path(@team) %> |
+  <% end %>
+  <%= link_to 'Back', teams_path %>
 </div>

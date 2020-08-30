@@ -21,13 +21,13 @@
     padding: 5px 8px;
     margin: 10px;
   }
-
+  
   #flash_notice {
     background-color: #CFC;
     border: solid 1px #6C6;
     color: #008000;
   }
-
+  
   #flash_error, #flash_alert {
     background-color: #FCC;
     border: solid 1px #C66;
@@ -46,7 +46,7 @@
     transition: opacity 300ms ease-out;
     background-color: #008CBA;
     border-color: #0078a0;
-    color: #FFFFFF; }
+    color: #FFFFFF; } 
     .alert-box .close {
       right: 0.25rem;
       background: inherit;
@@ -88,11 +88,16 @@
       opacity: 0; }
 
 // use this class as a wrapper div for every single page
+
+.relative-wrapper {
+  position: relative;
+}
+
 .scroll {
     display: block;
     position: relative;
     overflow-y: auto;
-    padding-top: 50px;
+    // padding-top: 50px;
     padding-bottom: 70px;
 }
 
@@ -198,19 +203,17 @@ body{
   display: inline-block;
 }
 
-.table-content{
+.challenges-content{
   display:block;
   width: 100vw;
-}
 
-.table{
-    width: 100vw;
 }
 
 .nav-tabs li {
   padding:6px;
   display: inline-block;
   margin: 0 auto;
+  
 
   &.left-tab{
     margin-left: 20%;
@@ -228,17 +231,15 @@ body{
     }
 
     padding:2px;
-    }
+    
 }
 
-.basic-margin{
-    margin-left: 1%;
-    margin-right: 1%;
+
 }
 
 .tab-content{
+  width: 60%;
   margin-left: 20vw;
-  margin-right: 20vw;
 }
 
 
@@ -250,7 +251,6 @@ body{
     padding-top: 3%;
     font-size: 2rem;
     font-weight: lighter;
-    text-align: center;
 }
 
 th{
@@ -260,6 +260,7 @@ th{
 }
 
 //Form styling
+
 .form-class{
   margin: 2%;
 }
@@ -371,6 +372,7 @@ th{
     }
 
     #info-footer{
+        position:fixed;
         bottom: 0;
         text-align: center;
         position: fixed;
