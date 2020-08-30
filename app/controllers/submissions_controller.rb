@@ -33,7 +33,8 @@ class SubmissionsController < ApplicationController
         format.html { redirect_to @submission, notice: 'Submission was successfully created.' }
         format.json { render :show, status: :created, location: @submission }
       else
-        format.html { render :new }
+        # format.html { render :new, locals: {user_id: current_user.id} }
+        format.html { redirect_to new_submission_path(user_id: current_user.id) }
         format.json { render json: @submission.errors, status: :unprocessable_entity }
       end
     end
@@ -47,7 +48,8 @@ class SubmissionsController < ApplicationController
         format.html { redirect_to @submission, notice: 'Submission was successfully updated.' }
         format.json { render :show, status: :ok, location: @submission }
       else
-        format.html { render :edit }
+        # format.html { render :edit, locals: {user_id: @submission.user_id} }
+        format.html { redirect_to edit_submission_path(@submission, user_id: @submission.user_id) }
         format.json { render json: @submission.errors, status: :unprocessable_entity }
       end
     end

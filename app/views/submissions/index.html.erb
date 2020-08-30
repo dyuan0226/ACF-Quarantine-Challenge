@@ -3,7 +3,7 @@
 <h1 class="centered">Submissions</h1>
 
 <div>
-  <%= link_to 'New Submission', new_submission_path, class: "btn btn-primary creation-button" %>
+  <%= link_to 'New Submission', new_submission_path(user_id: current_user.id), class: "btn btn-primary creation-button" %>
 </div>
 
 <div class="submissions-area footer-padding">
@@ -16,7 +16,7 @@
       <% if current_user.role?(:admin) %>
         <div class="show-edit-destroy">
           <%= link_to 'Show', submission %>
-          <%= link_to 'Edit', edit_submission_path(submission) %>
+          <%= link_to 'Edit', edit_submission_path(submission, user_id: submission.user_id) %>
           <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
         </div>
       <% end %>

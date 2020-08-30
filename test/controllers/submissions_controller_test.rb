@@ -2,6 +2,7 @@ require "test_helper"
 
 class SubmissionsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login_admin
     @team = FactoryBot.create(:team)
     @user = FactoryBot.create(:user, team: @team)
     @challenge = FactoryBot.create(:challenge)
@@ -29,7 +30,7 @@ class SubmissionsControllerTest < ActionDispatch::IntegrationTest
     # create valid
     assert_difference('Submission.count') do
       @challenge_new = FactoryBot.create(:challenge, name: "Read a book", description: "Read a good book", category: "Miscellaneous", num_points: 20)
-      post submissions_path, params: { submission: { user_id: @user.id, challenge_id: @challenge_new.id, date_completed: Date.current } }
+      post submissions_path, params: { submission: { user_id: @user.id, challenge_id: @challenge_new.id } }
     end
     assert_redirected_to submission_path(Submission.last)
   end
