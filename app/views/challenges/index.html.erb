@@ -1,6 +1,11 @@
 <br><br>
-<%= render partial: "partials/structure1", locals: {model_name: "challenge",
-                                                     primary: "challenges",
+<%= render partial: "partials/structure1", locals: {model_name: "challenge", 
+                                                     primary: "challenges", 
+                                                     secondary: nil,
+                                                     sidebar: nil} %>
+
+<%= render partial: "partials/structure1", locals: {model_name: "challenge", 
+                                                     primary: "user_challenges", 
                                                      secondary: nil,
                                                      sidebar: nil} %>
 
