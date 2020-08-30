@@ -1,39 +1,35 @@
 <nav class="navbar navbar-expand">
   <a class="navbar-brand" id='title' href="/">ACF Quarantine Challenge</a>
 
-
-
     <ul class="navbar-nav ml-auto" id='navlinks'>
 		<li class="nav-item">
 			<li><%= link_to 'Leaderboard', teams_path %></li>
   		</li>
-	 	 <li class="nav-item">
+	 	<li class="nav-item">
 	 		 <li><%= link_to 'Challenges', challenges_path %></li>
-		  </li>
+		</li>
 
-		  <% if logged_in? %>
-					<% if current_user.role?(:admin) %>
-						<li class='nav-item'>
-							<%= link_to "Teams", teams_path %>
-						</li>
-					<% else current_user.role?(:regular) %>
-						<li class='nav-item'>
-							<%= link_to "Team", team_path(current_user.team) %>
-						</li>
-					<% end %>
+		<% if logged_in? %>
+			<% if current_user.role?(:admin) %>
+				<li class='nav-item'>
+					<%= link_to "Teams", teams_path %>
 				</li>
-		  <% end %>
-
+			<% else current_user.role?(:regular) %>
+				<li class='nav-item'>
+					<%= link_to "Team", team_path(current_user.team) %>
+				</li>
+			<% end %>
+		<% end %>
 
 	  	<li class="nav-item">
 		    <li><%= link_to 'Gallery', submissions_path %></li>
-      </li>
-      <% if logged_in? %>
-        <li class="nav-item"><%= link_to 'Logout', logout_path %></li>
-      <% else %>
-        <li class="nav-item"><%= link_to 'Login', login_path %></li>
-      <% end %>
-		</ul>
+		</li>
+		<% if logged_in? %>
+			<li class="nav-item"><%= link_to 'Logout', logout_path %></li>
+		<% else %>
+			<li class="nav-item"><%= link_to 'Login', login_path %></li>
+		<% end %>
+			</ul>
 
 
 

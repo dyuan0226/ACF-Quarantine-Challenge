@@ -2,16 +2,19 @@
 
 <p>
   <strong>Challenge:</strong>
-  <%= @submission.challenge %>
+  <%= @submission.challenge.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @submission.user %>
+  <%= @submission.user.name %>
 </p>
 
 <p>
-  <%= image_tag(@submission.content) %>
+  <%= image_tag(@submission.content, size: "450x450") %>
+</p>
+
+<p>
   <%= @submission.caption %>
 </p>
 

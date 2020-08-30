@@ -162,8 +162,7 @@ body{
 .nav-item{
     margin: auto;
     width: 25%;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
 }
 
 #title{
@@ -196,6 +195,7 @@ body{
 .table-page{
   text-align:center;
   display: inline-block;
+  margin: 0 auto;
 }
 
 .table-content{
@@ -203,8 +203,8 @@ body{
   width: 100vw;
 }
 
-.table{
-    width: 100vw;
+.p-2{
+  justify-content: center;
 }
 
 .nav-tabs li {
@@ -402,6 +402,7 @@ th{
   text-align: center;
   background-color: #D6E8FF;
   display: inline-block;
+  max-width: 250px;
 
   .placeholder-pic {
     height: 25vw;
@@ -423,6 +424,14 @@ th{
   .show-edit-destroy {
     font-size: 12px;
     margin-bottom: 6px;
+  }
+
+  .caption {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
 
