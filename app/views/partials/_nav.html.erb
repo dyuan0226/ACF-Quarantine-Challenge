@@ -10,15 +10,9 @@
 		</li>
 
 		<% if logged_in? %>
-			<% if current_user.role?(:admin) %>
-				<li class='nav-item'>
-					<%= link_to "Teams", teams_path %>
-				</li>
-			<% else current_user.role?(:regular) %>
-				<li class='nav-item'>
-					<%= link_to "Team", team_path(current_user.team) %>
-				</li>
-			<% end %>
+			<li class='nav-item'>
+				<%= link_to "My Team", team_path(current_user.team) %>
+			</li>
 		<% end %>
 
 	  	<li class="nav-item">
