@@ -4,7 +4,8 @@
                                                      secondary: nil,
                                                      sidebar: nil} %>
 
-<p class='new-button'><strong>
-  <%= link_to 'New Challenge', new_challenge_path, class: "btn btn-primary" %>
-</strong>
-</p>
+<% if current_user.role?(:admin) %>
+  <p class='new-button'><strong>
+    <%= link_to 'New Challenge', new_challenge_path, class: "btn btn-primary" %>
+  </strong></p>
+<% end %>
