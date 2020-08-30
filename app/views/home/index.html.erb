@@ -1,6 +1,6 @@
 <%= image_tag 'logo.png', class: 'homepage-logo'  %>
 
-<div class="row">
+<div class="row scroll">
     <div class="inline-card home">
         <div class="card-body-inline home">
             <h4>Welcome!</h4>
@@ -14,6 +14,14 @@
             <a class='small-link' href="home/contact">Contact</a>
             <a class='small-link' href="home/privacy">Privacy</a>
         </div>
+    </div>
+
+    <div class="centered">
+      <% if !logged_in? %>
+        <%= link_to "Login or Create an Account", login_path %>
+      <% else %>
+        <%= link_to "Logout", logout_path %>
+      <% end %>
     </div>
 </div>
 

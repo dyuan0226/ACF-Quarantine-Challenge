@@ -23,13 +23,13 @@
 
 	  	<li class="nav-item">
 		    <li><%= link_to 'Gallery', submissions_path %></li>
-		</li>
-		<% if logged_in? %>
-			<li class="nav-item"><%= link_to 'Logout', logout_path %></li>
-		<% else %>
-			<li class="nav-item"><%= link_to 'Login', login_path %></li>
-		<% end %>
-			</ul>
+      </li>
+      <% if logged_in? %>
+        <li class="nav-item"><%= link_to 'Logout', logout_path %></li>
+      <% else %>
+        <li class="nav-item"><%= link_to 'Login/Create Account', login_path %></li>
+      <% end %>
+		</ul>
 
 
 

@@ -1,10 +1,16 @@
 <br><br>
-<%= render partial: "partials/structure1", locals: {model_name: "challenge",
-                                                     primary: "challenges",
+<%= render partial: "partials/structure1", locals: {model_name: "challenge", 
+                                                     primary: "challenges", 
                                                      secondary: nil,
                                                      sidebar: nil} %>
 
-<p class='new-button'><strong>
-  <%= link_to 'New Challenge', new_challenge_path, class: "btn btn-primary" %>
-</strong>
-</p>
+<%= render partial: "partials/structure1", locals: {model_name: "challenge", 
+                                                     primary: "user_challenges", 
+                                                     secondary: nil,
+                                                     sidebar: nil} %>
+
+<% if current_user.role?(:admin) %>
+  <p class='new-button'><strong>
+    <%= link_to 'New Challenge', new_challenge_path, class: "btn btn-primary" %>
+  </strong></p>
+<% end %>

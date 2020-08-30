@@ -21,7 +21,13 @@
 
 
   <body>
-    <%= render :partial => "partials/nav" %>
+    <% if logged_in? && current_user.role?(:admin) %>
+      <%= render :partial => "partials/nav" %>
+    <% elsif logged_in? && current_user.role?(:regular) %>
+      <%= render :partial => "partials/nav" %>
+    <% else %>
+      <%= render :partial => "partials/nav_guest" %>
+    <% end %>
     <%= render :partial => "partials/flash" %>
     <%= yield %>
     <%= render :partial => "partials/footer" %>
