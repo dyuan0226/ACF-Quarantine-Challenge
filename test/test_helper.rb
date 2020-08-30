@@ -12,9 +12,10 @@ require "minitest"
 require 'minitest/rails'
 require 'minitest/reporters'
 require 'minitest_extensions'
+require 'active_storage_validations/matchers'
 require 'contexts'
 
-class ActiveSupport::TestCase
+class ActiveSupport::TestCase extend ActiveStorageValidations::Matchers
   # Run tests in parallel with specified workers
   # Commented out b/c screwing with reporter
   # parallelize(workers: :number_of_processors)

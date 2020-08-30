@@ -42,11 +42,15 @@ gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
+# Use Google Cloud for storage
+gem "google-cloud-storage", "~> 1.11", require: false
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Other gems
 gem 'validates_timeliness', '4.0.2'
+gem 'active_storage_validations'
 gem 'time_date_helpers', '0.0.4'
 gem 'cancancan'
 gem 'simple-password-gen'
