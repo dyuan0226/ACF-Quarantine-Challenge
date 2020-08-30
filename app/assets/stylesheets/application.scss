@@ -103,7 +103,7 @@
 
 // styles for team show page
 .centered {
-  text-align: center;
+  margin: 0 auto;
 }
 
 .inline-card {
@@ -238,8 +238,7 @@ body{
 }
 
 .tab-content{
-  width: 60%;
-  margin-left: 20vw;
+  margin: 0 auto;
 }
 
 
@@ -281,7 +280,7 @@ th{
     @media only screen and (min-width: 700px) {
         margin-top: 60px;
     }
-}
+  }
 }
 
 .homepage-logo{

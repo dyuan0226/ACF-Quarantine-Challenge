@@ -13,11 +13,13 @@
       <div><%= submission.user.name %></div>
       <div><%= image_tag(submission.content) %></div>
       <div><%= submission.date_completed %></div>
-      <div class="show-edit-destroy">
-        <%= link_to 'Show', submission %>
-        <%= link_to 'Edit', edit_submission_path(submission) %>
-        <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
-      </div>
+      <% if current_user.role?(:admin) %>
+        <div class="show-edit-destroy">
+          <%= link_to 'Show', submission %>
+          <%= link_to 'Edit', edit_submission_path(submission) %>
+          <%= link_to 'Destroy', submission, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 <div>
