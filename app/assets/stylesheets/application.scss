@@ -108,6 +108,19 @@
   margin: 0 auto;
 }
 
+.login-card {
+  @media only screen and (min-width: 1200px) {
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 40%;
+  }
+  
+  padding: 10px;
+  border: 1px solid grey;
+  margin: 10px;
+  background-color: rgba(167, 165, 165, 0.48);
+}
+
 .inline-card {
    width: 100%;
    border: 2px black;
