@@ -21,4 +21,5 @@
 </p>
 
 <%= link_to 'Edit', edit_challenge_path(@challenge) %> |
-<%= link_to 'Back', challenges_path %>
+<%= link_to 'Back', challenges_path %> | 
+<%= link_to 'Submit Challenge', new_submission_path(user_id: current_user.id, challenge_id: @challenge.id) %>
